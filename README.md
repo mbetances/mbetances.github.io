@@ -9,4 +9,7 @@
 [Assignment 3](assignment3--1-.html)
 
 
+[Assignment 3 extra credit](assignment3ec.html)
+
+
 [Assignment 4](assignment4.html)

@@ -1,0 +1,86 @@
+---
+title: "extra_credit"
+author: "Miguel Betances"
+date: "2022-09-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+16.  Find your own dataset, import it and implement the following functions on the data
+```{r}
+library(dplyr)
+library(stringr)
+```
+
+
+```{r}
+data = read.csv('https://bryantstats.github.io/math421/data/adult_census.csv')
+```
+```{r}
+head(data)
+str(data)
+names(data)
+mean(data$income)
+min(data$hours.per.week)
+max(data$hours.per.week)
+table(data$race)
+sum(is.na(data))
+colSums(is.na(data))
+class(data$education)
+cor(data$hours.per.week, data$education.num)
+by(data$education, data$income, median)
+data$certificate = ifelse(data$education.num>12,'Graduate', 'Non-graduate')
+data$worker_type = case_when(data$hours.per.week> median(data$hours.per.week) ~ 'Hard-worker', data$hours.per.week< median(data$hours.per.week) ~'Laid-back worker', data$hours.per.week> 45 ~ 'Very Hard-worker')
+```
+
+- head
+- str
+- names
+- mean, min, max
+- table
+- is.na
+- colSums
+- class
+- cor
+- by
+- ifelse
+- case_when
+
+17.  In the dataset in #16, practice the follows.  You can reuse the code of 16. 
+
+- Create a categorical variable from a continuous variable
+- From one categorical variable, create a new categorical variable with fewer categories
+
+Create a Categorical variable from a continuous variable:
+```{r}
+data$certificate = ifelse(data$education.num>12,'High-School Graduate', 'Non High School graduate')
+```
+
+From one categorical variable, create a new categorical variable with fewer categories:
+```{r}
+data$worker_type2 = case_when(data$hours.per.week> mean(data$hours.per.week) ~ 'Hard-worker', data$hours.per.week< mean(data$hours.per.week) ~'Laid-back worker')
+```
+
