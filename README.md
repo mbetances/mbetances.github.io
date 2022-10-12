@@ -19,3 +19,9 @@
 
 
 [Assignment 6](assignment6--1-.html)
+
+
+[Plot - Assign.7](abc.png)
+
+
+[Assignment 7](assignment7.html)
