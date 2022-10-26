@@ -31,12 +31,79 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 ```{r}
 library(mlbench)
 library(tidyverse)
+library(caret)
 data(PimaIndiansDiabetes)
 df <- tibble(PimaIndiansDiabetes)
+```
+
+```{r}
+df <- df %>% rename(target=diabetes)
+```
+
+```{r}
+df = drop_na(df)
+```
+
+```{r}
+df <- df %>% 
+  mutate(target = as.factor(target))
+```
+```{r}
+splitIndex <- createDataPartition(df$target, p = .70, 
+                                  list = FALSE)
+df_train <- df[ splitIndex,]
+df_test <- df[-splitIndex,]
+```
+
+```{r}
+model1 <- train(target~., data=df_train, 
+                method = "rpart2",
+                maxdepth=3)
+pred <- predict(model1, df_test)
+cm <- confusionMatrix(data = pred, reference = df_test$target)
+cm$overall[1]
+```
+
+```{r}
+model2 <- train(target~., data=df_train, 
+                method = "rf",
+                ntree = 500)
+pred <- predict(model2, df_test)
+cm <- confusionMatrix(data = pred, reference = df_test$target)
+cm$overall[1]
 ```
 
 Train and Test a decision tree and a random forest with caret. Plot the variable importance of these models. 
 
 2. Train and Test a `glmnet` model. Plot the variable importance of the model. 
 
-3. Train and test two models that are not `ranger`, `glmnet` or `rpart`  with caret. If possible, plot the variable importance of the model. 
+```{r}
+model3 <- train(target~., data=df_train, 
+                method = "glmnet")
+pred <- predict(model3, df_test)
+cm <- confusionMatrix(data = pred, reference = df_test$target)
+cm$overall[1]
+```
+
+```{r}
+varImp(model3)
+```
+
+3. Train and test two models that are not `ranger`, `glmnet` or `rpart`  with caret. If possible, plot the variable importance of the model.
+
+```{r}
+model4 <- train(target~., data=df_train, 
+                method = "wsrf")
+pred <- predict(model4, df_test)
+cm <- confusionMatrix(data = pred, reference = df_test$target)
+cm$overall[1]
+```
+
+```{r}
+model5 <- train(target~., data=df_train, 
+                method = "gbm")
+pred <- predict(model5, df_test)
+cm <- confusionMatrix(data = pred, reference = df_test$target)
+cm$overall[1]
+```
+
