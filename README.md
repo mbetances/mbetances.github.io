@@ -40,3 +40,6 @@
 
 
 [Assignment 12]()
+
+
+[Midterm](midterm_toc--1-.html)
