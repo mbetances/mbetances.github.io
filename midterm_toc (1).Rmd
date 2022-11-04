@@ -1,0 +1,558 @@
+
+---
+title: "Math 421 - Midterm"
+output:
+  html_document:
+    toc: yes
+    toc_float: yes
+    theme: united
+  word_document:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+## Instruction
+
+The midterm has two components: the Rmarkdown notebook (html) and the presentation.  We will do the presentation in class. Post both the notebook and the presentation on your Github page. 
+
+**The notebook:** The notebook should be created using `rmarkdown` (like other assignments). The notebook should have a title. It should have a table of content (TOC form) or in a tab form. The Rmd files of Tab and Toc form are available on the class webpage. 
+
+**The Presentation:** Present your results in 5-10 minutes. To make the presentation using Rmarkdown, do the follows: 
+
+    - In Rstudio -> File -> New File -> R markdown
+    
+    - In the left panel, click to Presentation -> Click OK
+    
+    - Now you have an Rmarkdown that can be knitted to be a html presentation 
+    
+- You can also use Rmd samples of the class slides that are available on the class webpage. 
+    
+- You do not need to rerun all the codes for the presentation. For example, to show the model comparison, you just need to show the image of the model comparison instead of running all the models again.
+    
+- To inset an image in a slide, use  `![](image.png)`
+
+- To scale images, you can follow these below instructions. 
+    
+    - https://bookdown.org/yihui/rmarkdown-cookbook/figure-size.html
+    
+    - http://zevross.com/blog/2017/06/19/tips-and-tricks-for-working-with-images-and-figures-in-r-markdown-documents/
+
+- To turn off message and warning of a code cell, use:  `{r, message=FALSE, warning=FALSE}` for the cell. 
+
+**What to present**:
+
+  - Present Part 2 - Visualization
+  
+  - Present Question Question 4, 5 and 6 in Part 3.  
+  
+  - Present any errors/challenges you run into and how you fix/overcome them. 
+
+**Data:**  
+
+The data for the mid-term project is the Rhode Island Department of Health Hospital Discharge Data.  Each row of the data presents a patient. 
+
+Link: https://drive.google.com/open?id=15QNBf6YYKocK2nNIfpKDer58kQnCPNZJ 
+
+-------
+
+## I. Data Wranggling
+
+1. Download the data file `hdd0318cy.sas7bdat`.  
+
+2. Use `read_sas` in library `haven` to read the data. 
+    
+```{r}
+library(haven)
+df <- read_sas('hdd0318cy.sas7bdat')
+```
+
+3. Filter the data to have only patients of the year 2018 (`yod=2018`)
+
+```{r}
+library(tidyverse)
+library(dplyr)
+df <- df %>% filter(yod=='18')
+```
+
+4. Select to work with only following variables: 
+
+```{r, eval=FALSE}
+df <- df %>% select("yod", "payfix","pay_ub92","age",  
+                      "sex","raceethn","provider","moa", 
+                      "yoa","mod","admtype", "asource" , 
+                      "preopday" ,"los", "service" , "icu","ccu",    
+                      "dispub92", "payer"  ,"drg","trandb", 
+                      "randbg","randbs","orr", "anes","seq",   
+                      "lab","dtest", "ther","blood","phar", 
+                      "other","patcon","bwght","total","tot" ,  
+                      "ecodub92","b_wt","pt_state","diag_adm","ancilar" ,
+                      "campus","er_fee","er_chrg","er_mode","obs_chrg",
+                      "obs_hour","psycchrg","nicu_day")
+                      
+```
+ 
+
+*Notice*:  You may want to save the current data to your computer for easy access later.  To save the data file use `write_csv(df, 'midterm.csv')`, for example.  
+
+```{r}
+write_csv(df, 'midterm.csv')
+```
+
+5. What are variables that have missing values?
+
+```{r}
+colSums(is.na(df))
+```
+
+In this dataframe, 'nicu_day', 'obs_hour', 'preopday', and 'pay_fix' are the four variables that have missing data.
+
+6. Remove all variables with missing values. 
+
+```{r}
+df %>% select(-payfix, -preopday, -obs_hour, -nicu_day)
+```
+
+7. Refer to the data description in the file `HDD2015-18cy6-20-19.docx`, which variable recording the month of admission?, which variable recording the month of discharge?
+
+The Variable 'MOA' is recording month of admission and the variable 'MOD' is recording month of discharge.
+
+8. Which month admitted the most number of patients? Which month admitted the most number of male patients?
+
+```{r}
+table(df$moa)
+```
+
+Month 10 (October) was the month to record the most patients with a number of 11,408.
+
+```{r}
+df2 <- df %>% filter(sex=='1')
+table(df2$moa)
+```
+
+October also ended up being the month with the most male patients admitted, with a number of 5,164 male patients.
+
+9. Which month has the most number of teenage female patients?
+
+```{r}
+df3 <- df %>% filter(sex=='2', age>='13', age <='19')
+table(df3$moa)
+```
+
+Month 3 (March) ended up being the month who admitted the most teen female patients with a number of 226.
+
+10. Which provider has the most number of female patients in October? 
+
+```{r}
+df %>% filter(sex=='2', moa=='10') %>% count(provider) %>% arrange(-n)
+```
+
+Provider '7205' had the highest female patients in October with the number 1,517.
+
+11. Are female patients older than male patients, on average? 
+
+```{r}
+df %>% group_by(sex) %>% summarise(mean(age))
+```
+Mean age for male patients came out to be 51.49, and mean age for females came out to be 50.86. This means that on average, male patients were older. 
+
+12. Calculate the average age of patients by months. Which month has the oldest patients on average age?
+
+```{r}
+df %>% group_by(moa) %>% summarise(mean(age))
+```
+
+On average, month 1 had the oldest patients with an average age of 51.792.
+
+13. What is the name of the provider that has the highest total charge?
+
+```{r}
+df %>% group_by(provider) %>% summarise(max(total))
+```
+
+Provider '7214' has the highest total charge with a total of 0003402056.
+
+14. What is the name of the provider that has the least total charge for teenage male on average?
+
+```{r}
+df %>% filter(sex=='1', age>='13', age <='19') %>% group_by(provider) %>% summarise(min(total))
+```
+
+The provider with the minimum least total charge for teenage males on average is provider 7216 with 0000000322.
+
+15. Create a season (Spring, Summer, Fall, Winter) variable. Calculate the length of stays by season.  Which season has the longest length of stays on average?
+
+```{r}
+df$season = case_when(df$moa %in% c(11,12,1) ~ 'Winter',df$moa %in% c(2,3,4,5) ~ 'Spring',df$moa %in% c(6,7,8) ~ 'Summer',df$moa %in% c(9,10,11) ~ 'Fall')
+```
+
+```{r}
+df %>% group_by(season) %>% summarise(mean(los))
+```
+Fall is the season with the longest length of stays on average, with a number of 4.9648.
+
+16. On average, how much a 20 year-old male get charged for staying 1 day in the Fall season?
+
+```{r}
+df %>% 
+  mutate(total = as.factor(total))
+df %>% filter(sex=='1', age=='20', season=='Fall', los=='1') %>% summarise(mean(total))
+```
+
+17. Write a paragraph to summarize the section and give your comments on the results. You could do some other calculations to support your points. 
+
+During part 1, exploring the dataset there have been many important findings. One part of the data that I found very interesting, was how Fall and Winter were the two seasons with the highest average lenth of stays. I found this interesting because supposedly, the Corona Virus bacteria was more able to survive during cold weathers, so during Fall and Winter, patients probably had worse effects and therefore, there lengths of stay were longer. This is further reinforced by the fact that October was the month with the highest number of patients admitted, and the other "Cold" months like January, December, etc. also had very high numbers. Adding on, I found interesting how old the average patient age was for both Males and Females. With average ages of 51.49 and 50.86, this is further evidence of how older people were more prone to the virus, and younger people were in a lot less danger to it. 
+
+-------
+
+## II. Data Visualization
+
+Continue with the data from part I. 
+
+1. Provides at least 10 meaningful plots. Comments on the plots. All plots should have title, caption, appropriate labels on x and y-axis
+
+```{r}
+library(gapminder)
+library(gganimate)
+library(ggplot2)
+library(tidyverse)
+library(lubridate)
+library(knitr)
+```
+
+Plot 1
+```{r}
+df %>% ggplot()+ 
+  geom_point(mapping=aes(x=age, y=tot))+
+  facet_wrap(~sex) + labs(x='Age', 
+       y = 'Total Charge', 
+       title = 'Total Charges vs Age and Sex', 
+       caption = 'There does not seem to be any real difference between male and female total charges, although there seems to be a considerable amount of more men than women, so the mean total charge could spot the difference better than this plot.')
+```
+Observation: There does not seem to be any real difference between male and female total charges, although there seems to be a considerable amount of more men than women, so the mean total charge could spot the difference better than this plot. 
+
+Plot 2
+```{r}
+df %>% group_by(sex) %>% summarise(mean_total = mean(tot, na.rm=TRUE)) %>% ggplot()+ 
+  geom_col(mapping=aes(x=sex, y=mean_total))+ labs(x='Sex', 
+       y = 'Mean Total Charge', 
+       title = 'Mean Total Charges per Sex', 
+       caption = 'By computing the mean total charges we can in fact see that on average, men had slightly higher total charges than women. Referencing to one of the calculations made in step 1, men did have a slightly higher average age than women, so the reason for a higher charge may be because these Male patients were in more complicated situations due to higher ages.')
+```
+Observation: By computing the mean total charges we can in fact see that on average, men had slightly higher total charges than women. Referencing to one of the calculations made in step 1, men did have a slightly higher average age than women, so the reason for a higher charge may be because these Male patients were in more complicated situations due to higher ages. 
+
+Plot 3
+```{r}
+df %>% ggplot()+ 
+  geom_bar(mapping=aes(x=season))+ labs(x='Season', 
+       y = 'Count', 
+       title = 'Count per Season', 
+       caption = 'Spring seems to be the season in which most patients were affected which is a surprising find as I thought it would have been Winter. Doctors had said that during cold weather conditions, the virus was more able to thrive because the bacteria survived more in the cold.')
+```
+Observation: Spring seems to be the season in which most patients were affected which is a surprising find as I thought it would have been Winter. Doctors had said that during cold weather conditions, the virus was more able to thrive because the bacteria survived more in the cold.
+
+Plot 4
+```{r}
+df %>% filter(age<=27) %>% ggplot()+ 
+  geom_bar(mapping=aes(x=season))+ labs(x='Season', 
+       y = 'Count', 
+       title = 'Count per Season (Age<=27)', 
+       caption = 'I decided to take the previous plot and try to spot some changed in behaviour and see how it affected the count per season. Spring seems to be the season where most young people were affected, and it is a surprising find for me because I thought it would have been Summer. I felt like younger people would probably be the most exposed to the virus in summer because of going out and meeting with friends.')
+```
+
+Small Observation: I decided to take the previous plot and try to spot some changed in behaviour and see how it affected the count per season. Spring seems to be the season where most young people were affected, and it is a surprising find for me because I thought it would have been Summer. I felt like younger people would probably be the most exposed to the virus in summer because of going out and meeting with friends.
+
+Plot 5
+```{r}
+df %>% group_by(season) %>% summarise(mean_total = mean(tot, na.rm=TRUE)) %>% ggplot()+ 
+  geom_col(mapping=aes(x=season, y=mean_total, fill = season))+ labs(x='Season', 
+       y = 'Mean Total Charge', 
+       title = 'Mean Total Charges per Season', 
+       caption = 'I wanted to see if total charges for patients varied throughout the seasons, as rent and electricity charges may vary during holiday periods and extreme weather periods, therefore total charges as well. Turns out they all are pretty much the same. Fall was still highest, with Winter and Summer following.')
+```
+Observation: I wanted to see if total charges for patients varied throughout the seasons, as rent and electricity charges may vary during holiday periods and extreme weather periods, therefore total charges as well. Turns out they all are pretty much the same.
+
+Plot 6
+```{r}
+df %>% group_by(season, provider) %>% summarise(mean_los = mean(los)) %>% ggplot()+ 
+  geom_point(mapping=aes(x=season, y=mean_los))+facet_wrap(~provider)+ labs(x='Season', 
+       y = 'Mean Length of Stay', 
+       title = 'Mean Length of Stay per Season with each Provider', 
+       caption = 'From this plot, we can clearly see that provider 7215 has the highest average length of stays in general. When breaking it down to each season, they also have the highest averages per season, so it looks like provider 7215 either accommodates its patients more, or their patients simply had worse Corona Virus experiences.')
+```
+Observation: From this plot, we can clearly see that provider '7215' has the highest average length of stays in general. When breaking it down to each season, they also have the highest averages per season, so it looks like provider 7215 either accommodates its patients more, or their patients simply had worse Corona Virus experiences. 
+
+Plot 7
+```{r}
+df %>% filter(age>=65) %>% group_by(season, provider) %>% summarise(mean_los = mean(los)) %>% ggplot()+ 
+  geom_point(mapping=aes(x=season, y=mean_los))+facet_wrap(~provider)+ labs(x='Season', 
+       y = 'Mean Length of Stay', 
+       title = 'Mean Length of Stay per Season with each Provider (Age>=65)', 
+       caption = 'I wanted to see if the average length of stays for each provider had a big difference when it came to older patients with an age of 65 or above. Here, it looks like provider 7216 has the highest average length of stay for its 65+ patients, and interestingly, provider 7215 is not even in this plot since it apparently has no patients of 65 or older. ')
+```
+Observation: I wanted to see if the average length of stays for each provider had a big difference when it came to older patients with an age of 65 or above. Here, it looks like provider '7216' has the highest average length of stay for its 65+ patients, and interestingly, provider '7215' is not even in this plot since it apparently has no patients of 65 or older. 
+
+Plot 8 & 9
+```{r}
+df %>% ggplot()+ 
+  geom_bar(mapping=aes(x=raceethn))+ labs(x='Race/Ethnicity Group', 
+       y = 'Count', 
+       title = 'Count per Race/Ethnicity group', 
+       caption = 'In plot 8, I decided to look into the Race/Ethnicity variable which grouped patients by their different race/ethnicity. I was never able to figure out which number represents each group, but nevertheless, I was able to find some interesting points about the data. The grand majority of the data set seems to be from the race/ethnicity group 1, with group 7 and 3 being the 2nd and 3rd highest.')
+```
+
+```{r}
+df %>% group_by(raceethn) %>% summarise(mean_tot = mean(tot)) %>% ggplot()+ 
+  geom_point(mapping=aes(x=raceethn, y=mean_tot))+ labs(x='Race/Ethnicity Group', 
+       y = 'Mean Length of Stay', 
+       title = 'Mean Length of Stay per Race/Ethnicity group', 
+       caption = 'In plot 9, we can definitely see that there is some difference in average total charges, especially for race/ethnicity groups 3 and 7. I find this weird because they are respectively the 2nd and 3rd most common groups in the dataset. I find it surprising that race and ethnicity had so much to do with total amount a person is charged.')
+```
+Observations from Plot 8: In plot 8, I decided to look into the Race/Ethnicity variable which grouped patients by their different race/ethnicity. I was never able to figure out which number represents each group, but nevertheless, I was able to find some interesting points about the data. The grand majority of the data set seems to be from the race/ethnicity group 1, with group 7 and 3 being the 2nd and 3rd highest. 
+
+Observations from Plot 9: In plot 9, we can definitely see that there is some difference in average total charges, especially for race/ethnicity groups 3 and 7. I find this weird because they are respectively the 2nd and 3rd most common groups in the dataset. I find it surprising that race and ethnicity had so much to do with total amount a person is charged.
+
+Plot 10
+```{r}
+df %>% group_by(provider, raceethn) %>% summarise(mean_los = mean(los)) %>% ggplot()+ 
+  geom_point(mapping=aes(x=raceethn, y=mean_los))+facet_wrap(~provider) + labs(x='Race/Ethnicity Group', 
+       y = 'Mean Length of Stay', 
+       title = 'Mean Length of Stay per Race/Ethnicity group and Provider', 
+       caption = 'Lastly, I wanted to see what the average length of stays were for each race/ethnicity group with respect to each provider, in order to analyze if providers also had any biases towards specific race/ethnicity groups. It turned out that most lengths of stays were practically on par with each other, except race group 4 which was consistently a bit higher for a couple of providers. These providers were: 7201, 7204, 7213, and 7214.')
+```
+Observation: Lastly, I wanted to see what the average length of stays were for each race/ethnicity group with respect to each provider, in order to analyze if providers also had any biases towards specific race/ethnicity groups. It turned out that most lengths of stays were practically on par with each other, except race group 4 which was consistently a bit higher for a couple of providers. These providers were: '7201', '7204', '7213', and '7214'.
+
+2. Make an animation plot. 
+
+```{r}
+g <- ggplot(df, 
+       aes(x = provider, 
+           y = tot, 
+           fill = provider))+
+  geom_col() + 
+  transition_states(moa) + labs(title='Month: {moa}')
+animate(g)
+```
+
+3. Write a paragraph to summarize the section and give your comments on the results. 
+
+While creating all of these plots, it was interesting to analyze all the data I was able to visualize. First of all, it was nice to be able to explore the data with graphs and get to know the data set and how many men or women there were. It was also cool to see how men had a higher average total charge, but due to exploring the data set better, instead of making quick conclusions, I tied it to something important I found, and that was that males had a higher average ge than females. Since covid hit older patients harder, this may have been the main contributor that led to males having higher average charges. Adding on, seeing how patients' average length of stays changed drastically depending on which provider they had and what age they were, was a very interesting find. Lastly, spotting the differences in charges and average lengths of stay between race and ethnicity groups was pretty surprising, I did not feel like this would be something that caused differences, but it ended up playing a big role in the data set.
+
+-------
+
+## III. Predictive Models
+
+Continue with the data from part I. Make sure you do not have any missing values in the data. Use the follows as the target and input variables: 
+
+```{r}
+df <- read_csv('midterm.csv')
+```
+
+*Target Variable*: Create the target variable taking value of 
+
+  - `low` if the total charge of a patient (`tot`) is smaller than the median of the total charge, and
+
+```{r}
+df$target <- case_when(df$tot<=21854 ~ 'low', df$tot>=21854 ~ 'high')
+```
+
+  - `high` otherwise. 
+
+*Input Variables*:
+
+  - "age","sex","raceethn","provider","moa","mod","admtype","campus", 'los'
+
+```{r}
+df <- df %>% select("age","sex","raceethn","provider","moa","mod","admtype","campus", 'los','target')
+df <- drop_na(df)
+```
+
+-------
+
+1. Use `filter` function to filter out rows where `raceethn==''` or `admtype==''`. Make sure all the categorical variables are factor, numeric variables are numeric. Set Training : Testing Split = 10 : 90 
+
+```{r}
+df <- df %>% filter((!raceethn=='') & (!admtype=='')) %>% mutate(sex = as.factor(sex),
+         raceethn = as.factor(raceethn), provider = as.factor(provider), moa = as.factor(moa), mod = as.factor(mod), admtype = as.factor(admtype), campus = as.factor(campus), los = as.factor(los))
+```
+
+```{r}
+library(caret)
+splitIndex <- createDataPartition(df$target, p = .01, 
+                                  list = FALSE)
+df_train <- df[ splitIndex,]
+df_test <- df[-splitIndex,]
+```
+
+2. Train a decision tree using `rpart`.  Plot the decision tree. Plot the variable importance ranked by the tree. 
+
+```{r}
+library(rpart)
+tree_model <- rpart(target ~ ., data = df_train,
+                 control = rpart.control(maxdepth = 3))
+library(rattle)
+fancyRpartPlot(tree_model)
+```
+```{r}
+tree_model$variable.importance
+```
+
+3. Using caret for this question. Set `Training Control` to be: Use Cross-Validation of 5 folds across all models.  Train & tune at least 2 different models (i.e. two different values for `method=` in the train function of caret).  Plot the hyper-parameter tuning plots for each model. 
+
+Plot 1
+```{r}
+tuneGrid = expand.grid(maxdepth = 2:10)
+trControl = trainControl(method = "cv",
+                         number = 5)
+tree_approach_2 <- train(target~., data=df_train, 
+                                method = "rpart2", 
+                                trControl = trControl,
+                                tuneGrid = tuneGrid)
+plot(tree_approach_2)
+```
+Plot 2
+```{r}
+trControl = trainControl(method = "cv",
+                         number = 5)
+tuneGrid = expand.grid(mtry = 2:4,
+                       splitrule = c('gini', 'extratrees'),
+                       min.node.size = c(1:10))
+forest_ranger <- train(target~., data=df_train, 
+                    method = "ranger", 
+                    trControl = trControl,
+                    tuneGrid = tuneGrid)
+```
+
+```{r}
+plot(forest_ranger)
+```
+
+
+4. Plot the comparison of the models in 3. 
+
+Plot 1
+```{r}
+trControl = trainControl(method = "cv",
+                         number = 5)
+tree_approach_2 <- train(target~., data=df_train, 
+                                method = "rpart2", 
+                                trControl = trControl)
+forest_ranger <- train(target~., data=df_train, 
+                    method = "ranger", 
+                                trControl = trControl)
+
+
+results <- resamples(list('Decision Tree' = tree_approach_2,
+                          'Random Forest' = forest_ranger))
+bwplot(results)
+```
+
+5. What is your final selection for the model? Test the accuracy of your final model on the test data. 
+
+The decision is to use the random forest instead of the decision tree. The random forest has both a higher Accuracy, and a higher Kappa statistic
+
+```{r}
+pred <- predict(forest_ranger, df_test)
+cm <- confusionMatrix(data = pred, reference = as.factor(df_test$target))
+cm$overall[1]
+```
+
+6. Create another `target` variable (binary), decide the input variables and redo 1 to 5. 
+
+```{r}
+df$los = as.numeric(df$los)
+df$target_los <- case_when(df$los<mean(df$los) ~ 'low', df$los>mean(df$los) ~ 'high')
+```
+
+```{r}
+df <- df %>% filter((!raceethn=='') & (!admtype=='')) %>% mutate(sex = as.factor(sex),
+         raceethn = as.factor(raceethn), provider = as.factor(provider), moa = as.factor(moa), mod = as.factor(mod), admtype = as.factor(admtype), campus = as.factor(campus), los = as.factor(los))
+```
+
+```{r}
+library(caret)
+splitIndex <- createDataPartition(df$target_los, p = .01, 
+                                  list = FALSE)
+df_train <- df[ splitIndex,]
+df_test <- df[-splitIndex,]
+```
+
+```{r}
+library(rpart)
+tree_model_los <- rpart(target_los ~ ., data = df_train,
+                 control = rpart.control(maxdepth = 3))
+library(rattle)
+fancyRpartPlot(tree_model_los)
+```
+```{r}
+tree_model_los$variable.importance
+```
+
+```{r}
+tree_model_los$variable.importance
+```
+
+Plot 1
+```{r}
+tuneGrid = expand.grid(maxdepth = 2:10)
+trControl = trainControl(method = "cv",
+                         number = 5)
+tree_approach_2_los <- train(target_los~., data=df_train, 
+                                method = "rpart2", 
+                                trControl = trControl,
+                                tuneGrid = tuneGrid)
+plot(tree_approach_2_los)
+```
+
+Plot 2
+```{r}
+trControl = trainControl(method = "cv",
+                         number = 5)
+tuneGrid = expand.grid(mtry = 2:4,
+                       splitrule = c('gini', 'extratrees'),
+                       min.node.size = c(1:10))
+forest_ranger_los <- train(target_los~., data=df_train, 
+                    method = "ranger", 
+                    trControl = trControl,
+                    tuneGrid = tuneGrid)
+```
+
+```{r}
+plot(forest_ranger_los)
+```
+
+Plot 1
+```{r}
+trControl = trainControl(method = "cv",
+                         number = 5)
+tree_approach_2_los <- train(target_los~., data=df_train, 
+                                method = "rpart2", 
+                                trControl = trControl)
+forest_ranger_los <- train(target_los~., data=df_train, 
+                    method = "ranger", 
+                                trControl = trControl)
+
+
+results_los <- resamples(list('Decision Tree' = tree_approach_2_los,
+                          'Random Forest' = forest_ranger_los))
+bwplot(results_los)
+```
+
+The decision is to use the random forest instead of the decision tree. The random forest has both a higher Accuracy, and a higher Kappa statistic.
+
+```{r}
+pred <- predict(forest_ranger_los, df_test)
+cm <- confusionMatrix(data = pred, reference = as.factor(df_test$target_los))
+cm$overall[1]
+```
+7. Write a paragraph to summarize the section and give your comments on the results. 
+
+From part 3, I took away a lot of different things while predicting these two variables. In the upper part, the variable to predict was total charge and whether it was high or low depending on if the charge was above or below the median. In the bottom, the variable to predict was the length of stay for each patient depending on whether the observation was above or below the variable mean. For both predictive models, it was good to see that random forest models were much more accurate than the decision trees and it was by a very big margin. Adding on, they had much higher kappa values. For the random forest models, I used ranger method and for decision trees, I used rpart2. I also noticed that for the ranger model, all 3 randomly slected predictors had the same level of accuracy for both the gini and extratrees splitrules. For the rpart2 model, accuracy values increased as max tree depth increased. 
+
+-------
