@@ -1,0 +1,121 @@
+
+---
+title: "421 Midterm Presentation"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+   
+
+---
+# Plot 1
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+```
+
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+```{r, echo=FALSE}
+xaringanExtra::use_webcam()
+```
+
+```{r xaringan-fit-screen, echo=FALSE}
+xaringanExtra::use_fit_screen()
+```
+
+![](plot1.png)
+
+---
+# Plot 2
+
+![](plot2.png)
+
+---
+
+# Plot 3
+
+![](plot3.png)
+
+---
+# Plot 4
+
+![](plot4.png)
+
+---
+# Plot 5
+
+![](plot5.png)
+
+---
+# Plot 6
+
+![](plot6.png)
+
+---
+# Plot 7
+
+![](plot7.png)
+
+---
+# Plot 8
+
+![](plot8.png)
+
+---
+# Plot 9
+
+![](plot9.png)
+
+---
+# Plot 10
+
+![](plot10.png)
+
+---
+# Model Comparison
+
+![](comparison1.png)
+
+ Accuracy 
+0.7810314 
+---
+# Part 6
+
+- Target Variable: Length of Stay
+- Target_los = 'Low' when los < mean, 'High' when los > mean
+
+---
+# Tree Model (rpart2)
+
+![](rpart2.png)
+
+---
+# Forest Model (ranger)
+
+![](forest2.png)
+
+---
+# Accuracy Comparison
+
+![](comparison2.png)
+
+ Accuracy 
+0.9967763 
+
+---
+# Challenges
+
+- Loading the dataset
+
+- Interpreting some variables in the dataset because there were too many

@@ -43,3 +43,9 @@
 
 
 [Midterm](midterm_toc--1-.html)
+
+
+[Midterm Presentation](MidtermPresentation.html)
+
+
+[Assignment 13](assignment13.html)
