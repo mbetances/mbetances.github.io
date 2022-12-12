@@ -1,0 +1,72 @@
+
+---
+title: "Assists - SliderInput"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    logo: logo.png
+    source_code: embed
+    social: menu
+
+runtime: shiny
+---
+
+```{r global, include=FALSE}
+# load data in 'global' chunk so it can be shared by all users of the dashboard
+library(flexdashboard)
+library(tidyverse)
+library(plotly)
+library(knitr)
+library(DT)
+df <- read_csv('attacking.csv')
+position <- unique(df$position)
+df$playstyle <- case_when(df$dribbles <= mean(df$dribbles) ~ 'passer', df$dribbles >= mean(df$dribbles) ~ 'dribbler')
+```
+
+{.sidebar}
+=======================================================================
+
+Statistics in sports have become much more used. This dataset looks at the Champions League's best playmakers and assisters players and their stats by position, corners taken, dribbles, matches played and some other variables. The plots show the playstyle and assists for each position. Select the Input for the plots.
+
+```{r}
+sliderInput(inputId = "matches_input",
+            label = h2("Select Matches Played Range"),
+            min = min(df$match_played, na.rm=TRUE),
+            max = max(df$match_played, na.rm=TRUE),
+            value= c(1, 13))
+
+```
+
+Main Tab 1
+=======================================================================
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Density Plot
+
+```{r}
+renderPlotly({
+  p1 <- df %>% 
+    filter(match_played>input$matches_input[1], match_played<input$matches_input[2]) %>% 
+    ggplot(aes(x=assists, color=position))+
+    geom_density()
+  ggplotly(p1)
+})
+```
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Bar Plot
+
+```{r}
+renderPlotly({
+  p2 <- df %>% 
+    filter(match_played>input$matches_input[1], match_played<input$matches_input[2]) %>% 
+    ggplot(aes(x=assists, fill=playstyle))+
+    geom_bar()
+  ggplotly(p2)
+})
+```

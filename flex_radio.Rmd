@@ -1,0 +1,71 @@
+
+---
+title: "Assists - Radio Button"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    logo: logo.png
+    source_code: embed
+    social: menu
+
+runtime: shiny
+---
+
+```{r global, include=FALSE}
+# load data in 'global' chunk so it can be shared by all users of the dashboard
+library(flexdashboard)
+library(tidyverse)
+library(plotly)
+library(knitr)
+library(DT)
+df <- read_csv('attacking.csv')
+position <- unique(df$position)
+df$playstyle <- case_when(df$dribbles <= mean(df$dribbles) ~ 'passer', df$dribbles >= mean(df$dribbles) ~ 'dribbler')
+```
+
+{.sidebar}
+=======================================================================
+
+Statistics in sports have become much more used. This dataset looks at the Champions League's best playmakers and assisters players and their stats by position, corners taken, dribbles, matches played and some other variables. The plots show the playstyle and assists for each position. Select the Input for the plots. 
+
+```{r}
+radioButtons(inputId = "position_input", 
+             label = h2("Select Position"),
+             choices = c('Goalkeeper', 'Defender', 'Midfielder', 'Forward'),
+             inline = TRUE,
+             selected = 'Defender')
+```
+
+Main Tab 1
+=======================================================================
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Density Plot
+
+```{r}
+renderPlotly({
+  p1 <- df %>% 
+    filter(position==input$position_input) %>% 
+    ggplot(aes(x=assists, color=playstyle))+
+    geom_density()
+  ggplotly(p1)
+})
+```
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Bar Plot
+
+```{r}
+renderPlotly({
+  p2 <- df %>% 
+    filter(position==input$position_input) %>% 
+    ggplot(aes(x=assists, fill=playstyle))+
+    geom_bar()
+  ggplotly(p2)
+})
+```

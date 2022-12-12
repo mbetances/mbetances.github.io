@@ -1,0 +1,218 @@
+
+---
+title: "English Premier League"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    logo: pl_logo.png
+    source_code: embed
+    social: menu
+
+runtime: shiny
+---
+
+```{r global, include=FALSE}
+# load data in 'global' chunk so it can be shared by all users of the dashboard
+library(flexdashboard)
+library(tidyverse)
+library(plotly)
+library(knitr)
+library(DT)
+library(lubridate)
+df <- read_csv('epl.csv')
+```
+
+```{r}
+df$playstyle = case_when(df$Assists >= mean(df$Assists) ~ 'Playmaker', df$Goals >= mean(df$Goals) ~ 'Goalscorer', TRUE ~ 'Role')
+df <- df %>% filter(Position %in% c('GK', 'DF', 'MF', 'FW'))
+df$Date <- as.Date(df$Date , format = "%m/%d/%y")
+```
+
+{.sidebar}
+=======================================================================
+
+- The English Premier League is one of the World's Most Prestigious sports tournaments. This dataset shows last season's individual statistics for almost all of its players. The dataset has variables such as: Age, Matches, Position, minutes played, goals, assists, passes, and pass completion %, and mnay others like expected goals or assists which may help the analyst learn more about the playstyle of such individual. 
+
+```{r}
+sliderInput(inputId = "matches_input",
+            label = h2("Select Matches Played Range"),
+            min = min(df$Matches, na.rm=TRUE),
+            max = max(df$Matches, na.rm=TRUE),
+            value= c(1, 38))
+
+checkboxGroupInput(inputId = "playstyle_input", 
+                   label = h3("Playstyle"),
+                   choices = unique(df$playstyle), 
+                   inline = TRUE,
+                   selected = 'Playmaker')
+
+selectInput(inputId = "club_input", 
+            label = h3("Select Club"),
+            choices = unique(df$Club), 
+            selected = 'Liverpool FC')
+
+radioButtons(inputId = "position_input", 
+             label = h2("Select Position"),
+             choices = c('GK', 'DF', 'MF', 'FW'),
+             inline = TRUE,
+             selected = 'DF')
+
+dateRangeInput(inputId = "date_input", 
+               label = h2("Date range"), 
+               start = min(df$Date), 
+               end = max(df$Date),
+               min = min(df$Date), 
+               max = max(df$Date))
+```
+
+Main Tab 1
+=======================================================================
+
+Column {data-width=500, .tabset}
+-----------------------------------------------------------------------
+
+### Column Tab 1
+
+```{r}
+df
+```
+
+
+### Column Tab 2
+
+```{r}
+kable(df)
+```
+=======================================================================
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+
+
+Main Tab 2
+=======================================================================
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Density Plot
+
+```{r}
+renderPlotly({
+  p1 <- df %>% 
+    filter(Matches > input$matches_input[1], Matches<input$matches_input[2]) %>% 
+    ggplot(aes(x=Matches, color=Position))+
+    geom_density()
+  ggplotly(p1)
+})
+```
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Bar Plot
+
+```{r}
+renderPlotly({
+  p2 <- df %>% 
+    filter(Matches > input$matches_input[1], Matches < input$matches_input[2]) %>% 
+    ggplot(aes(x=Assists, fill=playstyle))+
+    geom_bar()
+  ggplotly(p2)
+})
+```
+
+
+Main Tab 3
+=======================================================================
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Bar Plot
+
+```{r}
+renderPlotly({
+  p7 <- df %>% 
+    filter(Club %in% input$club_input) %>% 
+    ggplot(aes(x=playstyle, fill=Position))+
+    geom_bar()
+  ggplotly(p7)
+})
+```
+
+
+Column {data-width=1000}
+-----------------------------------------------------------------------
+
+
+### Facet Wrap
+
+```{r}
+renderPlotly({
+  p6 <- df %>% 
+    filter(Club %in% input$club_input) %>% 
+    ggplot()+geom_point((mapping=aes(x=Matches, y=Goals, color=Position)))+
+    facet_wrap(~Club)
+  ggplotly(p6)
+})
+```
+
+
+Main Tab 4
+=======================================================================
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Facet Wrap
+
+```{r}
+renderPlotly({
+  p4 <- df %>% 
+    filter(playstyle %in% input$playstyle_input) %>% 
+    ggplot()+geom_point((mapping=aes(x=Goals, y=Assists)))+
+    facet_wrap(~playstyle)
+  ggplotly(p4)
+})
+```
+
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Bar Plot
+
+```{r}
+renderPlotly({
+  p5 <- df %>% 
+    filter(Position %in% input$position_input) %>% 
+    ggplot(aes(x=Yellow_Cards, fill=Position))+
+    geom_bar()
+  ggplotly(p5)
+})
+```
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+Main Tab 5
+=======================================================================
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Density Plot
+
+```{r}
+renderPlotly({
+  p8 <- df %>% 
+    filter(Date > input$date_input[1], Date < input$date_input[2]) %>%
+    ggplot(aes(x=Date, y=Goals))+
+    geom_point()
+  ggplotly(p8)
+})
+```
+
