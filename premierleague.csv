@@ -1,0 +1,541 @@
+﻿Rank,Date,PLAYER,TEAM,GP,GS,MIN,G,ASST,SHOTS,SOG
+1,1/1/20,Jamie Vardy,Leicester City,35,34,3034,23,5,71,43
+2,1/2/20,Danny Ings,Southampton,38,32,2812,22,2,66,38
+3,1/3/20,Pierre-Emerick Aubameyang,Arsenal,36,35,3138,22,3,70,42
+4,1/4/20,Raheem Shaquille Sterling,Manchester City,33,30,2660,20,1,68,38
+5,1/5/20,Mohamed Salah Ghaly,Liverpool,34,33,2884,19,10,95,59
+6,1/6/20,Sadio Mané,Liverpool,35,31,2753,18,7,66,36
+7,1/7/20,Harry Kane,Tottenham Hotspur,29,29,2589,18,2,62,37
+8,1/8/20,Raúl Alonso Jiménez Rodríguez,Wolverhampton Wanderers,38,37,3244,17,6,89,44
+9,1/9/20,Marcus Rashford,Manchester United,31,31,2653,17,7,77,44
+10,1/10/20,Anthony Martial,Manchester United,32,31,2638,17,6,59,40
+11,1/11/20,Sergio Leonel Agüero del Castillo,Manchester City,24,18,1456,16,3,54,28
+12,1/12/20,Tammy Bakumo-Abraham,Chelsea,34,25,2221,15,3,74,40
+13,1/13/20,Gabriel Fernando de Jesus,Manchester City,34,21,2027,14,7,81,48
+14,1/14/20,Chris Wood,Burnley,32,29,2444,14,1,57,31
+15,1/15/20,Kevin De Bruyne,Manchester City,35,32,2798,13,20,70,31
+16,1/16/20,Dominic Calvert-Lewin,Everton,36,30,2629,13,1,70,38
+17,1/17/20,Richarlison de Andrade,Everton,36,36,3081,13,3,66,32
+18,1/18/20,Teemu Pukki,Norwich City,36,33,2892,11,3,56,35
+19,1/19/20,Riyad Mahrez,Manchester City,33,21,1940,11,9,51,32
+20,1/20/20,Heung-Min Son,Tottenham Hotspur,30,28,2485,11,10,62,38
+21,1/21/20,Michail Antonio,West Ham United,24,19,1770,10,3,54,31
+22,1/22/20,Neal Maupay,Brighton and Hove Albion,37,30,2768,10,3,65,38
+23,1/23/20,Alexandre Lacazette,Arsenal,30,22,1877,10,4,44,26
+24,1/24/20,Mason Greenwood,Manchester United,31,12,1312,10,1,32,20
+25,1/25/20,Troy Deeney,Watford,27,26,2234,10,2,32,23
+26,1/26/20,Roberto Firmino Barbosa de Oliveira,Liverpool,38,34,3001,9,8,70,39
+27,1/27/20,Jordan Ayew,Crystal Palace,37,37,3160,9,2,44,24
+28,1/28/20,Christian Pulisic,Chelsea,25,19,1726,9,4,48,26
+29,1/29/20,Willian Borges Da Silva,Chelsea,36,29,2601,9,7,48,29
+30,1/30/20,Callum Wilson,Bournemouth,35,32,2909,8,1,45,21
+31,1/31/20,Jack Grealish,Aston Villa,36,36,3234,8,6,55,23
+32,2/1/20,Ayoze Pérez,Leicester City,33,26,2019,8,4,36,22
+33,2/2/20,Olivier Giroud,Chelsea,18,12,999,8,0,35,19
+34,2/3/20,Jay Rodriguez,Burnley,36,20,2009,8,1,55,30
+35,2/4/20,Bamidele Alli,Tottenham Hotspur,25,21,1851,8,4,35,19
+36,2/5/20,Bruno Miguel Borges Fernandes,Manchester United,14,14,1192,8,7,37,18
+37,2/6/20,Sébastien Haller,West Ham United,32,24,2263,7,1,46,27
+38,2/7/20,Harry Wilson,Bournemouth,31,20,1651,7,0,31,20
+39,2/8/20,Diogo José Teixeira da Silva,Wolverhampton Wanderers,34,27,2297,7,1,46,26
+40,2/9/20,Mason Mount,Chelsea,37,32,2872,7,5,50,29
+41,2/10/20,Todd Cantwell,Norwich City,37,30,2500,6,2,29,16
+42,2/11/20,David Silva,Manchester City,27,22,1832,6,10,32,18
+43,2/12/20,Bernardo Mota Veiga de Carvalho e Silva,Manchester City,34,23,2029,6,7,29,15
+44,2/13/20,Ashley Barnes,Burnley,19,17,1361,6,0,32,12
+45,2/14/20,Oliver McBurnie,Sheffield United,36,24,2116,6,0,43,25
+46,2/15/20,Joshua King,Bournemouth,26,24,2019,6,4,22,13
+47,2/16/20,Mahmoud Ahmed Ibrahim Hassan,Aston Villa,34,20,1950,6,1,28,17
+48,2/17/20,Harvey Barnes,Leicester City,36,24,2090,6,8,46,28
+49,2/18/20,James Maddison,Leicester City,31,29,2628,6,3,44,18
+50,2/19/20,Jonjo Shelvey,Newcastle United,26,25,2123,6,2,30,14
+51,2/20/20,Lys Mousset,Sheffield United,30,11,1232,6,4,23,9
+52,2/21/20,Virgil van Dijk,Liverpool,38,38,3420,5,1,27,16
+53,2/22/20,Phil Foden,Manchester City,23,9,892,5,2,26,15
+54,2/23/20,Robert Snodgrass,West Ham United,24,17,1511,5,5,16,10
+55,2/24/20,John Fleck,Sheffield United,30,28,2517,5,2,19,11
+56,2/25/20,Leandro Trossard,Brighton and Hove Albion,31,22,2013,5,3,33,12
+57,2/26/20,John Lundstram,Sheffield United,34,26,2455,5,3,33,10
+58,2/27/20,James Ward-Prowse,Southampton,38,38,3420,5,3,43,26
+59,2/28/20,Wesley Moraes Ferreira da Silva,Aston Villa,21,21,1790,5,1,28,18
+60,2/29/20,Nicolas Pépé,Arsenal,31,22,2015,5,6,37,18
+61,3/1/20,Kelechi Iheanacho,Leicester City,20,12,961,5,3,29,20
+62,3/2/20,Stuart Armstrong,Southampton,30,19,1713,5,3,35,20
+63,3/3/20,Andrii Yarmolenko,West Ham United,23,10,988,5,1,22,13
+64,3/4/20,Ismaïla Sarr,Watford,28,22,2028,5,4,30,13
+65,3/5/20,Divock Okoth Origi,Liverpool,28,7,706,4,1,10,6
+66,3/6/20,Trent Alexander-Arnold,Liverpool,38,35,3176,4,13,27,13
+67,3/7/20,Jordan Henderson,Liverpool,30,26,2244,4,5,12,8
+68,3/8/20,Alex Oxlade-Chamberlain,Liverpool,30,17,1492,4,1,22,10
+69,3/9/20,Georginio Wijnaldum,Liverpool,37,35,2948,4,0,31,15
+70,3/10/20,Che Adams,Southampton,30,12,1105,4,2,22,10
+71,3/11/20,Nathan Redmond,Southampton,32,32,2768,4,4,45,21
+72,3/12/20,Wilfried Zaha,Crystal Palace,38,37,3280,4,3,39,17
+73,3/13/20,Lucas Rodrigues Moura da Silva,Tottenham Hotspur,35,25,2247,4,4,35,14
+74,3/14/20,Anwar El Ghazi,Aston Villa,34,26,2061,4,4,41,20
+75,3/15/20,Miguel Ángel Almirón Rejala,Newcastle United,36,35,3033,4,2,37,17
+76,3/16/20,Leander Dendoncker,Wolverhampton Wanderers,38,32,2794,4,0,15,5
+77,3/17/20,Matt Doherty,Wolverhampton Wanderers,36,32,2840,4,3,26,16
+78,3/18/20,Adama Traoré,Wolverhampton Wanderers,37,27,2606,4,9,28,12
+79,3/19/20,Jorge Luiz Frello Filho,Chelsea,31,27,2384,4,2,8,4
+80,3/20/20,Marcos Alonso,Chelsea,18,15,1432,4,2,19,8
+81,3/21/20,Scott McTominay,Manchester United,27,20,1770,4,1,17,10
+82,3/22/20,Gerard Deulofeu,Watford,28,25,2105,4,5,43,21
+83,3/23/20,Abdoulaye Doucouré,Watford,37,36,3167,4,2,41,12
+84,3/24/20,Mark Noble,West Ham United,33,32,2684,4,3,14,6
+85,3/25/20,Dwight Gayle,Newcastle United,20,10,849,4,2,18,10
+86,3/26/20,Rodrigo Hernández Cascante,Manchester City,35,29,2486,3,2,20,9
+87,3/27/20,Aaron Cresswell,West Ham United,31,31,2730,3,0,14,5
+88,3/28/20,Issa Diop,West Ham United,32,31,2766,3,1,14,7
+89,3/29/20,Bernard Anício Caldeira Duarte,Everton,27,15,1278,3,2,7,5
+90,3/30/20,Luka Milivojević,Crystal Palace,31,28,2514,3,1,21,9
+91,3/31/20,Lewis Dunk,Brighton and Hove Albion,36,36,3231,3,3,26,10
+92,4/1/20,Billy Sharp,Sheffield United,25,10,1047,3,2,13,7
+93,4/2/20,Adam Webster,Brighton and Hove Albion,31,31,2670,3,1,13,7
+94,4/3/20,Dominic Solanke,Bournemouth,32,17,1644,3,1,18,8
+95,4/4/20,Michael Obafemi,Southampton,21,8,661,3,2,7,5
+96,4/5/20,Patrick van Aanholt,Crystal Palace,29,29,2511,3,2,18,6
+97,4/6/20,John McGinn,Aston Villa,28,27,2316,3,3,43,20
+98,4/7/20,Conor Hourihane,Aston Villa,27,18,1538,3,5,16,10
+99,4/8/20,Douglas Luiz Soares de Paulo,Aston Villa,36,28,2608,3,2,22,12
+100,4/9/20,Gabriel Teodoro Martinelli Silva,Arsenal,14,6,655,3,0,10,5
+101,4/10/20,Ricardo Domingos Barbosa Pereira,Leicester City,28,28,2520,3,2,15,5
+102,4/11/20,Ben Chilwell,Leicester City,27,27,2375,3,3,13,6
+103,4/12/20,Pedro Lomba Neto,Wolverhampton Wanderers,29,9,928,3,3,12,6
+104,4/13/20,Youri Tielemans,Leicester City,37,32,2834,3,6,35,13
+105,4/14/20,Allan Saint-Maximin,Newcastle United,26,23,1870,3,4,32,21
+106,4/15/20,Daniel James,Manchester United,33,26,2290,3,6,32,20
+107,4/16/20,N'Golo Kanté,Chelsea,22,20,1733,3,0,12,6
+108,4/17/20,Roberto Maximiliano Pereyra,Watford,28,17,1653,3,0,13,9
+109,4/18/20,Jeffrey Schlupp,Crystal Palace,17,11,1034,3,1,12,10
+110,4/19/20,Aaron Anthony Connolly,Brighton and Hove Albion,24,14,1261,3,1,25,14
+111,4/20/20,Dan Gosling,Bournemouth,24,14,1260,3,1,9,6
+112,4/21/20,Junior Stanislas,Bournemouth,15,7,712,3,0,11,7
+113,4/22/20,Tomáš Souček,West Ham United,13,12,1041,3,0,16,8
+114,4/23/20,Steven Bergwijn,Tottenham Hotspur,14,8,702,3,1,6,4
+115,4/24/20,Naby Deco Keïta,Liverpool,18,9,814,2,3,10,7
+116,4/25/20,James Milner,Liverpool,22,9,926,2,2,10,4
+117,4/26/20,Andrew Robertson,Liverpool,36,34,3113,2,12,15,6
+118,4/27/20,Fábio Henrique Tavares,Liverpool,28,22,2074,2,3,8,4
+119,4/28/20,İlkay Gündoğan,Manchester City,31,21,2017,2,1,19,8
+120,4/29/20,Nicolás Hernán Otamendi,Manchester City,24,18,1711,2,0,12,7
+121,4/30/20,Pablo Fornals,West Ham United,36,24,2177,2,5,27,11
+122,5/1/20,Angelo Ogbonna,West Ham United,31,31,2787,2,0,12,4
+123,5/2/20,Moise Kean,Everton,29,6,835,2,2,25,13
+124,5/3/20,Michael Keane,Everton,31,28,2556,2,0,13,4
+125,5/4/20,Yerry Fernando Mina González,Everton,29,25,2281,2,1,23,11
+126,5/5/20,Gylfi Sigurdsson,Everton,35,28,2563,2,3,26,14
+127,5/6/20,Cenk Tosun,Everton,10,4,466,2,0,12,5
+128,5/7/20,Theo Walcott,Everton,25,17,1297,2,3,19,10
+129,5/8/20,Pascal Groß,Brighton and Hove Albion,29,22,1802,2,4,20,9
+130,5/9/20,George Baldock,Sheffield United,38,38,3420,2,3,10,5
+131,5/10/20,John Egan,Sheffield United,36,36,3189,2,0,13,5
+132,5/11/20,David McGoldrick,Sheffield United,28,22,1822,2,2,38,20
+133,5/12/20,Enda Stevens,Sheffield United,38,38,3346,2,4,15,4
+134,5/13/20,Nathan Aké,Bournemouth,29,29,2505,2,2,19,7
+135,5/14/20,Moussa Djenepo,Southampton,18,10,926,2,2,17,8
+136,5/15/20,Christian Benteke Liolo,Crystal Palace,24,13,1257,2,1,34,19
+137,5/16/20,Tyrone Mings,Aston Villa,33,33,2903,2,2,9,4
+138,5/17/20,Tanguy Ndombèlé Alvaro,Tottenham Hotspur,21,12,1007,2,2,6,4
+139,5/18/20,Erik Lamela,Tottenham Hotspur,25,12,1211,2,1,19,10
+140,5/19/20,Moussa Sissoko,Tottenham Hotspur,29,28,2455,2,1,12,4
+141,5/20/20,Toby Alderweireld,Tottenham Hotspur,33,33,2958,2,2,13,4
+142,5/21/20,Jonathan Castro Otto,Wolverhampton Wanderers,35,33,2890,2,2,11,5
+143,5/22/20,Rúben Diogo da Silva Neves,Wolverhampton Wanderers,38,35,3059,2,2,38,10
+144,5/23/20,David Luiz Moreira Marinho,Arsenal,33,32,2811,2,1,19,8
+145,5/24/20,Sokratis Papastathopoulos,Arsenal,19,19,1697,2,0,5,2
+146,5/25/20,Onyinye Wilfred Ndidi,Leicester City,32,29,2674,2,1,19,3
+147,5/26/20,Romain Saïss,Wolverhampton Wanderers,33,31,2706,2,1,19,8
+148,5/27/20,Joelinton Cássio Apolinário de Lira,Newcastle United,38,32,2699,2,2,38,15
+149,5/28/20,Ciaran Clark,Newcastle United,14,14,1188,2,0,5,4
+150,5/29/20,Federico Fernández,Newcastle United,32,29,2618,2,2,13,7
+151,5/30/20,Matt Ritchie,Newcastle United,18,14,1315,2,1,17,8
+152,5/31/20,Fabian Schär,Newcastle United,22,18,1633,2,0,15,6
+153,6/1/20,César Azpilicueta,Chelsea,36,36,3230,2,6,20,6
+154,6/2/20,Dwight McNeil,Burnley,38,38,3344,2,6,32,14
+155,6/3/20,James Tarkowski,Burnley,38,38,3420,2,2,15,5
+156,6/4/20,Ashley Westwood,Burnley,35,35,3150,2,6,8,3
+157,6/5/20,Craig Dawson,Watford,29,26,2359,2,0,18,7
+158,6/6/20,Andre Gray,Watford,23,7,746,2,0,16,7
+159,6/7/20,Danny Welbeck,Watford,18,8,815,2,0,18,9
+160,6/8/20,Demarai Gray,Leicester City,21,3,607,2,3,16,8
+161,6/9/20,Matej Vydra,Burnley,19,7,812,2,1,17,10
+162,6/10/20,Shane Long,Southampton,26,15,1399,2,2,28,14
+163,6/11/20,Alireza Jahanbakhsh,Brighton and Hove Albion,10,3,308,2,0,8,2
+164,6/12/20,Matthew Longstaff,Newcastle United,9,6,572,2,0,3,2
+165,6/13/20,Antonio Rüdiger,Chelsea,20,19,1710,2,0,9,3
+166,6/14/20,Florian Lejeune,Newcastle United,6,4,441,2,0,4,3
+167,6/15/20,Eddie Nketiah,Arsenal,13,7,633,2,0,13,5
+168,6/16/20,Emiliano Buendía,Norwich City,36,28,2462,1,7,27,11
+169,6/17/20,Josip Drmic,Norwich City,21,5,637,1,0,11,6
+170,6/18/20,Onel Hernández,Norwich City,26,14,1381,1,2,17,8
+171,6/19/20,Jamal Lewis,Norwich City,28,25,2303,1,0,7,4
+172,6/20/20,Kenny McLean,Norwich City,37,32,2964,1,1,23,10
+173,6/21/20,Mario Vrancic,Norwich City,20,6,628,1,0,9,3
+174,6/22/20,Joel Matip,Liverpool,9,8,704,1,0,4,1
+175,6/23/20,Xherdan Shaqiri,Liverpool,7,2,182,1,0,2,1
+176,6/24/20,Kyle Walker,Manchester City,29,28,2395,1,4,9,3
+177,6/25/20,Fabián Cornelio Balbuena González,West Ham United,17,13,1176,1,0,8,4
+178,6/26/20,Felipe Anderson Pereira Gomes,West Ham United,25,20,1505,1,4,15,8
+179,6/27/20,Aymeric Laporte,Manchester City,15,14,1104,1,0,3,2
+180,6/28/20,Declan Rice,West Ham United,38,38,3420,1,3,23,9
+181,6/29/20,Davy Pröpper,Brighton and Hove Albion,35,32,2829,1,2,19,8
+182,6/30/20,Jóhann Gudmundsson,Burnley,12,6,622,1,1,8,2
+183,7/1/20,Chris Mepham,Bournemouth,12,10,911,1,0,6,2
+184,7/2/20,Tom Davies,Everton,30,23,2026,1,0,11,5
+185,7/3/20,Shane Duffy,Brighton and Hove Albion,19,12,1232,1,0,6,1
+186,7/4/20,Glenn Murray,Brighton and Hove Albion,23,7,790,1,1,15,5
+187,7/5/20,Oliver Norwood,Sheffield United,38,37,3100,1,1,12,6
+188,7/6/20,Philip Billing,Bournemouth,34,29,2532,1,1,26,8
+189,7/7/20,Steve Cook,Bournemouth,29,28,2430,1,0,7,2
+190,7/8/20,Jefferson Andrés Lerma Solís,Bournemouth,33,31,2709,1,2,21,2
+191,7/9/20,Cédric Ricardo Alves Soares,Arsenal,21,19,1559,1,1,7,5
+192,7/10/20,Jan Bednarek,Southampton,34,34,3058,1,1,6,1
+193,7/11/20,Ryan Bertrand,Southampton,32,31,2744,1,1,14,3
+194,7/12/20,Jack Stephens,Southampton,28,27,2453,1,3,6,2
+195,7/13/20,Jannik Vestergaard,Southampton,19,17,1497,1,0,10,5
+196,7/14/20,Cheikhou Kouyaté,Crystal Palace,35,29,2535,1,1,20,4
+197,7/15/20,Andros Townsend,Crystal Palace,24,14,1289,1,1,8,5
+198,7/16/20,Ahmed Eissa El Mohamady Abdel Fattah,Aston Villa,18,11,1026,1,1,4,1
+199,7/17/20,Björn Engels,Aston Villa,17,15,1447,1,0,8,1
+200,7/18/20,Ezri Konsa Ngoyo,Aston Villa,25,24,2042,1,2,8,4
+201,7/19/20,Matt Targett,Aston Villa,28,27,2295,1,2,6,4
+202,7/20/20,Serge Aurier,Tottenham Hotspur,33,31,2705,1,5,7,4
+203,7/21/20,Reiss Nelson,Arsenal,17,7,627,1,0,6,4
+204,7/22/20,Granit Xhaka,Arsenal,31,30,2591,1,2,8,3
+205,7/23/20,Calum Chambers,Arsenal,14,13,1103,1,1,8,2
+206,7/24/20,Lucas Torreira,Arsenal,29,17,1508,1,1,17,6
+207,7/25/20,Joseph Willock,Arsenal,29,8,844,1,1,12,5
+208,7/26/20,Hamza Choudhury,Leicester City,20,10,889,1,1,4,2
+209,7/27/20,Jonny Evans,Leicester City,38,38,3385,1,1,22,8
+210,7/28/20,Dennis Praet,Leicester City,27,12,1132,1,2,8,3
+211,7/29/20,João Filipe Iria Santos Moutinho,Wolverhampton Wanderers,38,34,3107,1,6,17,6
+212,7/30/20,Çağlar Söyüncü,Leicester City,34,34,3037,1,1,17,5
+213,7/31/20,Isaac Hayden,Newcastle United,29,26,2226,1,2,10,3
+214,8/1/20,Jamaal Lascelles,Newcastle United,24,24,2079,1,0,7,2
+215,8/2/20,Sean Longstaff,Newcastle United,23,14,1373,1,1,18,7
+216,8/3/20,Jesse Lingard,Manchester United,22,9,932,1,0,12,6
+217,8/4/20,Andreas Hugo Hoelgebaum Pereira,Manchester United,25,18,1488,1,3,28,14
+218,8/5/20,Paul Pogba,Manchester United,16,13,1205,1,3,17,8
+219,8/6/20,Victor Lindelöf,Manchester United,35,35,3093,1,0,5,1
+220,8/7/20,Ross Barkley,Chelsea,21,13,1104,1,4,24,12
+221,8/8/20,Mateo Kovačić,Chelsea,31,23,2073,1,3,12,5
+222,8/9/20,Pedro Rodríguez Ledesma,Chelsea,11,8,662,1,1,14,10
+223,8/10/20,Fikayo Tomori,Chelsea,15,15,1293,1,0,6,3
+224,8/11/20,Harry Maguire,Manchester United,38,38,3420,1,1,25,8
+225,8/12/20,Ben Mee,Burnley,32,32,2880,1,1,13,7
+226,8/13/20,Tom Cleverley,Watford,18,11,966,1,0,10,5
+227,8/14/20,Will Hughes,Watford,30,27,2262,1,1,17,3
+228,8/15/20,Alex Iwobi,Everton,25,19,1601,1,0,18,10
+229,8/16/20,Adam Lallana,Liverpool,15,3,374,1,1,3,1
+230,8/17/20,Alexander Tettey,Norwich City,30,28,2350,1,1,13,4
+231,8/18/20,Jan Vertonghen,Tottenham Hotspur,23,19,1646,1,1,3,2
+232,8/19/20,Michy Batshuayi Tunga,Chelsea,16,1,226,1,1,11,2
+233,8/20/20,Adam Masina,Watford,26,20,1818,1,0,12,3
+234,8/21/20,Mesut Özil,Arsenal,18,18,1448,1,2,5,3
+235,8/22/20,James Tomkins,Crystal Palace,18,18,1584,1,1,9,3
+236,8/23/20,Yves Bissouma,Brighton and Hove Albion,22,15,1260,1,0,14,7
+237,8/24/20,Robbie Brady,Burnley,17,5,450,1,2,7,1
+238,8/25/20,Bukayo Saka,Arsenal,26,19,1753,1,5,9,4
+239,8/26/20,Callum Hudson-Odoi,Chelsea,22,7,850,1,5,10,4
+240,8/27/20,DeAndre Yedlin,Newcastle United,16,10,936,1,0,1,1
+241,8/28/20,Brandon Williams,Manchester United,17,11,1004,1,0,5,2
+242,8/29/20,Kieran Tierney,Arsenal,15,12,992,1,1,5,2
+243,8/30/20,Héctor Bellerín,Arsenal,15,13,1159,1,0,5,2
+244,8/31/20,Kortney Hause,Aston Villa,18,17,1544,1,0,18,3
+245,9/1/20,Curtis Jones,Liverpool,6,1,122,1,0,5,2
+246,9/2/20,Valentino Lazaro,Newcastle United,13,4,473,1,0,3,1
+247,9/3/20,Sander Berge,Sheffield United,14,12,949,1,1,4,2
+248,9/4/20,Mbwana Ally Samatta,Aston Villa,14,11,946,1,0,12,3
+249,9/5/20,Daniel Castelo Podence,Wolverhampton Wanderers,9,3,287,1,0,6,3
+250,9/6/20,Jarrod Bowen,West Ham United,13,11,919,1,4,14,7
+251,9/7/20,David Brooks,Bournemouth,9,8,511,1,0,3,2
+252,9/8/20,Moritz Leitner,Norwich City,9,7,684,0,0,6,0
+253,9/9/20,Max Aarons,Norwich City,36,36,3240,0,1,8,4
+254,9/10/20,Sam Byram,Norwich City,17,15,1294,0,0,10,2
+255,9/11/20,Ralf Fährmann,Norwich City,1,1,22,0,0,0,0
+256,9/12/20,Ben Godfrey,Norwich City,30,30,2646,0,0,15,6
+257,9/13/20,Grant Hanley,Norwich City,15,14,1262,0,0,7,2
+258,9/14/20,Tim Krul,Norwich City,36,36,3240,0,0,0,0
+259,9/15/20,Marco Stiepermann,Norwich City,24,14,1187,0,0,12,6
+260,9/16/20,Tom Trybull,Norwich City,16,14,1136,0,0,8,2
+261,9/17/20,Joseph Gomez,Liverpool,28,22,1999,0,0,0,0
+262,9/18/20,Alisson Ramses Becker,Liverpool,29,29,2545,0,1,0,0
+263,9/19/20,Adrián San Miguel del Castillo,Liverpool,11,9,873,0,0,0,0
+264,9/20/20,Claudio Andrés Bravo Muñoz,Manchester City,4,3,346,0,0,0,0
+265,9/21/20,João Pedro Cavaco Cancelo,Manchester City,17,13,1205,0,0,12,3
+266,9/22/20,Lukasz Fabianski,West Ham United,25,25,2119,0,0,0,0
+267,9/23/20,Ederson Santana de Moraes,Manchester City,35,35,3072,0,0,0,0
+268,9/24/20,John Stones,Manchester City,16,12,1119,0,0,5,1
+269,9/25/20,Ryan Fredericks,West Ham United,27,25,2237,0,3,1,0
+270,9/26/20,Oleksandr Zinchenko,Manchester City,19,13,1273,0,0,9,3
+271,9/27/20,Manuel Lanzini,West Ham United,24,14,1377,0,2,15,7
+272,9/28/20,Jack Wilshere,West Ham United,8,2,210,0,0,0,0
+273,9/29/20,Max Meyer,Crystal Palace,17,6,650,0,0,7,2
+274,9/30/20,Adam Smith,Bournemouth,24,24,2060,0,1,3,1
+275,10/1/20,Erik Pieters,Burnley,24,21,1877,0,4,13,3
+276,10/2/20,Séamus Coleman,Everton,27,21,1839,0,1,6,4
+277,10/3/20,Lucas Digne,Everton,35,35,3035,0,7,14,4
+278,10/4/20,Jean-Philippe Gbamin,Everton,2,1,135,0,0,0,0
+279,10/5/20,Mason Holgate,Everton,27,24,2054,0,3,10,5
+280,10/6/20,Jordan Pickford,Everton,38,38,3420,0,0,0,0
+281,10/7/20,André Filipe Tavares Gomes,Everton,19,17,1460,0,1,5,0
+282,10/8/20,Dan Burn,Brighton and Hove Albion,34,33,2881,0,0,9,0
+283,10/9/20,David Button,Brighton and Hove Albion,0,0,0,0,0,0,0
+284,10/10/20,Bernardo Fernandes da Silva Junior,Brighton and Hove Albion,14,7,678,0,0,4,2
+285,10/11/20,Solly March,Brighton and Hove Albion,19,11,1144,0,1,15,8
+286,10/12/20,Martín Montoya,Brighton and Hove Albion,27,23,1900,0,1,6,3
+287,10/13/20,Mathew Ryan,Brighton and Hove Albion,38,38,3420,0,0,0,0
+288,10/14/20,Dale Stephens,Brighton and Hove Albion,33,28,2528,0,1,13,2
+289,10/15/20,Chris Basham,Sheffield United,38,38,3255,0,1,6,0
+290,10/16/20,Luke Freeman,Sheffield United,11,3,362,0,0,1,0
+291,10/17/20,Dean Henderson,Sheffield United,36,36,3240,0,0,0,0
+292,10/18/20,Phil Jagielka,Sheffield United,6,2,240,0,0,0,0
+293,10/19/20,Simon Moore,Sheffield United,2,2,180,0,0,0,0
+294,10/20/20,Jack O'Connell,Sheffield United,33,32,2915,0,1,11,3
+295,10/21/20,Ben Osborn,Sheffield United,13,6,591,0,0,2,1
+296,10/22/20,Artur Boruc,Bournemouth,0,0,0,0,0,0,0
+297,10/23/20,Charlie Daniels,Bournemouth,2,2,127,0,0,0,0
+298,10/24/20,Aaron Ramsdale,Bournemouth,37,37,3330,0,1,0,0
+299,10/25/20,Diego Rico,Bournemouth,27,27,2334,0,4,7,3
+300,10/26/20,Jack Simpson,Bournemouth,4,1,238,0,0,0,0
+301,10/27/20,Andrew Surman,Bournemouth,5,2,235,0,0,0,0
+302,10/28/20,Sofiane Boufal,Southampton,20,8,760,0,2,12,7
+303,10/29/20,Angus Gunn,Southampton,10,10,900,0,0,0,0
+304,10/30/20,Pierre-Emile Højbjerg,Southampton,33,30,2750,0,1,36,11
+305,10/31/20,Alex McCarthy,Southampton,28,28,2520,0,0,0,0
+306,11/1/20,Oriol Romeu,Southampton,30,20,1858,0,0,3,0
+307,11/2/20,Yan Valery,Southampton,11,10,782,0,0,2,2
+308,11/3/20,Gary Cahill,Crystal Palace,25,25,2168,0,1,13,5
+309,11/4/20,Scott Dann,Crystal Palace,16,14,1265,0,1,6,2
+310,11/5/20,Vicente Guaita,Crystal Palace,35,35,3150,0,0,0,0
+311,11/6/20,Wayne Hennessey,Crystal Palace,3,3,270,0,0,0,0
+312,11/7/20,Martin Kelly,Crystal Palace,19,17,1550,0,1,2,0
+313,11/8/20,James McArthur,Crystal Palace,37,37,3104,0,3,20,6
+314,11/9/20,James McCarthy,Crystal Palace,33,16,1672,0,0,9,3
+315,11/10/20,Joel Ward,Crystal Palace,29,27,2383,0,0,4,1
+316,11/11/20,Tom Heaton,Aston Villa,20,20,1795,0,0,0,0
+317,11/12/20,Henri Lansbury,Aston Villa,10,2,191,0,0,2,0
+318,11/13/20,José Ignacio Peleteiro Ramallo,Aston Villa,10,4,332,0,1,2,1
+319,11/14/20,Jed Steer,Aston Villa,1,1,8,0,0,0,0
+320,11/15/20,Neil Taylor,Aston Villa,14,11,1089,0,0,2,0
+321,11/16/20,Eric Dier,Tottenham Hotspur,19,15,1341,0,2,8,1
+322,11/17/20,Paulo Gazzaniga,Tottenham Hotspur,18,17,1612,0,0,0,0
+323,11/18/20,Hugo Lloris,Tottenham Hotspur,21,21,1808,0,0,0,0
+324,11/19/20,Danny Rose,Newcastle United,23,20,1759,0,0,1,0
+325,11/20/20,Oliver Skipp,Tottenham Hotspur,7,1,75,0,0,0,0
+326,11/21/20,Davinson Sánchez Mina,Tottenham Hotspur,29,27,2431,0,0,7,3
+327,11/22/20,Kyle Walker-Peters,Southampton,13,10,946,0,0,1,0
+328,11/23/20,Harry Winks,Tottenham Hotspur,31,26,2228,0,0,10,2
+329,11/24/20,Willy Boly,Wolverhampton Wanderers,22,22,1979,0,1,3,3
+330,11/25/20,Ainsley Maitland-Niles,Arsenal,20,15,1383,0,2,3,1
+331,11/26/20,Dani Ceballos,Arsenal,24,18,1699,0,2,8,3
+332,11/27/20,Mattéo Guendouzi Olié,Arsenal,24,19,1748,0,1,6,5
+333,11/28/20,Bernd Leno,Arsenal,30,30,2650,0,0,0,0
+334,11/29/20,Emiliano Martínez,Arsenal,9,8,770,0,0,0,0
+335,11/30/20,Marc Albrighton,Leicester City,20,9,864,0,3,7,2
+336,12/1/20,Ryan Bennett,Leicester City,16,10,936,0,0,1,0
+337,12/2/20,Conor Coady,Wolverhampton Wanderers,38,38,3420,0,0,0,0
+338,12/3/20,James Justin,Leicester City,13,11,1010,0,1,6,0
+339,12/4/20,Morgan Gibbs-White,Wolverhampton Wanderers,7,1,126,0,0,2,0
+340,12/5/20,Wes Morgan,Leicester City,11,4,430,0,0,3,2
+341,12/6/20,John Ruddy,Wolverhampton Wanderers,0,0,0,0,0,0,0
+342,12/7/20,Kasper Schmeichel,Leicester City,38,38,3420,0,0,1,0
+343,12/8/20,Rúben Gonçalo Silva Nascimento Vinagre,Wolverhampton Wanderers,16,6,646,0,0,4,0
+344,12/9/20,Danny Ward,Leicester City,0,0,0,0,0,0,0
+345,12/10/20,Rui Pedro dos Santos Patrício,Wolverhampton Wanderers,38,38,3420,0,0,0,0
+346,12/11/20,Karl Darlow,Newcastle United,0,0,0,0,0,0,0
+347,12/12/20,Martin Dúbravka,Newcastle United,38,38,3420,0,0,0,0
+348,12/13/20,Paul Dummett,Newcastle United,16,14,1228,0,0,2,2
+349,12/14/20,Emil Krafth,Newcastle United,17,11,1019,0,1,3,0
+350,12/15/20,Javier Manquillo,Newcastle United,21,18,1599,0,1,0,0
+351,12/16/20,Yoshinori Muto,Newcastle United,8,2,207,0,0,1,0
+352,12/17/20,Kurt Happy Zouma,Chelsea,28,25,2343,0,0,14,5
+353,12/18/20,Kepa Arrizabalaga Revuelta,Chelsea,33,33,2970,0,0,0,0
+354,12/19/20,Willy Caballero,Chelsea,5,5,450,0,0,0,0
+355,12/20/20,Andreas Christensen,Chelsea,21,21,1752,0,0,6,2
+356,12/21/20,Robert Kenedy Nunes do Nascimento,Chelsea,0,0,0,0,0,0,0
+357,12/22/20,Emerson Palmieri dos Santos,Chelsea,15,13,1025,0,0,9,7
+358,12/23/20,Juan Mata,Manchester United,19,8,753,0,2,8,2
+359,12/24/20,Nemanja Matic,Manchester United,21,18,1583,0,2,5,2
+360,12/25/20,Sergio Romero,Manchester United,0,0,0,0,0,0,0
+361,12/26/20,Luke Shaw,Manchester United,24,20,1734,0,0,7,5
+362,12/27/20,Axel Tuanzebe,Manchester United,5,2,187,0,0,0,0
+363,12/28/20,Aaron Wan-Bissaka,Manchester United,35,34,3072,0,4,5,1
+364,12/29/20,David de Gea Quintana,Manchester United,38,38,3420,0,0,0,0
+365,12/30/20,Phil Bardsley,Burnley,21,21,1890,0,1,7,4
+366,12/31/20,Jack Cork,Burnley,30,30,2616,0,0,10,6
+367,1/1/21,Ben Gibson,Burnley,0,0,0,0,0,0,0
+368,1/2/21,Kevin Long,Burnley,8,6,562,0,0,1,0
+369,1/3/21,Matthew Lowton,Burnley,17,17,1530,0,1,1,0
+370,1/4/21,Nick Pope,Burnley,38,38,3420,0,0,0,0
+371,1/5/21,Etienne Capoue,Watford,30,30,2632,0,3,13,1
+372,1/6/21,Craig Cathcart,Watford,29,28,2490,0,0,1,1
+373,1/7/21,Francisco Femenía Far,Watford,28,26,2241,0,0,4,1
+374,1/8/21,Ben Foster,Watford,38,38,3420,0,0,1,1
+375,1/9/21,José Holebas,Watford,14,11,1024,0,0,5,3
+376,1/10/21,Daryl Janmaat,Watford,8,7,608,0,1,2,0
+377,1/11/21,Christian Kabasele,Watford,27,26,2252,0,2,4,1
+378,1/12/21,Isaac Success Ajayi,Watford,5,0,65,0,0,1,1
+379,1/13/21,Heurelho da Silva Gomes,Watford,0,0,0,0,0,0,0
+380,1/14/21,Sead Kolašinac,Arsenal,26,19,1699,0,2,3,0
+381,1/15/21,Charlie Taylor,Burnley,24,22,1946,0,1,1,0
+382,1/16/21,Arthur Masuaku,West Ham United,17,10,932,0,1,5,2
+383,1/17/21,Kevin Danso,Southampton,6,3,276,0,1,1,0
+384,1/18/21,Fraser Forster,Southampton,0,0,0,0,0,0,0
+385,1/19/21,Andy Lonergan,Liverpool,0,0,0,0,0,0,0
+386,1/20/21,Albian Ajeti,West Ham United,9,0,132,0,0,1,0
+387,1/21/21,Domingos Quina,Watford,4,0,18,0,0,1,1
+388,1/22/21,Keinan Davis,Aston Villa,18,4,538,0,0,15,5
+389,1/23/21,Jack Stacey,Bournemouth,19,17,1541,0,2,5,2
+390,1/24/21,Fernando Luiz Rosa,Manchester City,30,26,2399,0,1,13,2
+391,1/25/21,Ben Davies,Tottenham Hotspur,18,16,1431,0,0,3,1
+392,1/26/21,Christian Fuchs,Leicester City,11,8,769,0,0,4,1
+393,1/27/21,Frédéric Guilbert,Aston Villa,25,22,2041,0,2,6,3
+394,1/28/21,Djibril Sidibé,Everton,25,18,1820,0,4,7,3
+395,1/29/21,Maarten Stekelenburg,Everton,0,0,0,0,0,0,0
+396,1/30/21,Timm Klose,Norwich City,7,7,585,0,0,1,0
+397,1/31/21,Nampalys Mendy,Leicester City,7,4,291,0,0,1,1
+398,2/1/21,Nathaniel Chalobah,Watford,22,10,926,0,1,6,0
+399,2/2/21,Caoimhin Kelleher,Liverpool,0,0,0,0,0,0,0
+400,2/3/21,Christian Atsu,Newcastle United,19,6,741,0,3,4,1
+401,2/4/21,Tahith Chong,Manchester United,3,0,34,0,0,1,0
+402,2/5/21,Marcos Rojo,Manchester United,3,1,121,0,0,1,0
+403,2/6/21,Daniel N'Lundulu,Southampton,0,0,0,0,0,0,0
+404,2/7/21,Billy Gilmour,Chelsea,6,2,192,0,0,1,0
+405,2/8/21,Christoph Zimmermann,Norwich City,17,16,1431,0,1,5,1
+406,2/9/21,Mamadou Sakho,Crystal Palace,14,11,931,0,0,0,0
+407,2/10/21,Daniel Drinkwater,Aston Villa,5,5,322,0,0,2,0
+408,2/11/21,Fabian Delph,Everton,16,13,1190,0,0,0,0
+409,2/12/21,Phil Jones,Manchester United,2,2,135,0,0,2,1
+410,2/13/21,Frederico Rodrigues de Paula Santos,Manchester United,29,23,2159,0,0,30,10
+411,2/14/21,Jairo Riedewald,Crystal Palace,17,7,764,0,0,1,0
+412,2/15/21,Steven Alzate,Brighton and Hove Albion,19,12,1183,0,0,7,3
+413,2/16/21,Tudor Cristian Băluţă,Brighton and Hove Albion,0,0,0,0,0,0,0
+414,2/17/21,Maximilian Kilman,Wolverhampton Wanderers,3,2,184,0,0,0,0
+415,2/18/21,Philip Heise,Norwich City,0,0,0,0,0,0,0
+416,2/19/21,Adam Idah,Norwich City,12,1,221,0,0,5,2
+417,2/20/21,Michael McGovern,Norwich City,2,1,158,0,0,0,0
+418,2/21/21,Lewis Cook,Bournemouth,27,14,1345,0,0,5,2
+419,2/22/21,Dimitri Foulquier,Watford,3,1,58,0,0,0,0
+420,2/23/21,Adrian Mariappa,Watford,20,15,1510,0,0,2,0
+421,2/24/21,Marvelous Nakamba,Aston Villa,29,19,1835,0,0,7,1
+422,2/25/21,Alfie Whiteman,Tottenham Hotspur,0,0,0,0,0,0,0
+423,2/26/21,Eric García,Manchester City,13,8,790,0,0,2,1
+424,2/27/21,Benjamin Mendy,Manchester City,19,18,1496,0,2,3,1
+425,2/28/21,Kieron Freeman,Sheffield United,2,0,6,0,0,0,0
+426,3/1/21,Andy Carroll,Newcastle United,19,4,618,0,4,10,3
+427,3/2/21,Dejan Lovren,Liverpool,10,9,777,0,1,4,1
+428,3/3/21,Leon Clarke,Sheffield United,2,0,33,0,0,1,0
+429,3/4/21,Ezequiel Schelotto,Brighton and Hove Albion,8,4,362,0,0,2,1
+430,3/5/21,Arnaut Danjuma Groeneveld,Bournemouth,14,6,628,0,0,11,4
+431,3/6/21,Simon Francis,Bournemouth,15,10,965,0,0,0,0
+432,3/7/21,Reece James,Chelsea,24,16,1513,0,2,12,3
+433,3/8/21,Harry Lewis,Southampton,0,0,0,0,0,0,0
+434,3/9/21,Rob Holding,Arsenal,8,6,581,0,0,2,0
+435,3/10/21,Juan Foyth,Tottenham Hotspur,4,1,66,0,0,0,0
+436,3/11/21,Akin Famewo,Norwich City,1,0,1,0,0,0,0
+437,3/12/21,Archie Mair,Norwich City,0,0,0,0,0,0,0
+438,3/13/21,Harvey Elliott,Liverpool,2,0,7,0,0,0,0
+439,3/14/21,David Martin,West Ham United,5,4,435,0,0,0,0
+440,3/15/21,Lloyd Kelly,Bournemouth,8,7,638,0,0,0,0
+441,3/16/21,José Diogo Dalot Teixeira,Manchester United,4,1,66,0,0,1,0
+442,3/17/21,Leighton Baines,Everton,8,4,401,0,0,1,0
+443,3/18/21,Beni Baningime,Everton,0,0,0,0,0,0,0
+444,3/19/21,Brandon Austin,Tottenham Hotspur,0,0,0,0,0,0,0
+445,3/20/21,Stephen Henderson,Crystal Palace,0,0,0,0,0,0,0
+446,3/21/21,James Garner,Manchester United,1,0,8,0,0,0,0
+447,3/22/21,Taylor Perry,Wolverhampton Wanderers,0,0,0,0,0,0,0
+448,3/23/21,Troy Parrott,Tottenham Hotspur,2,0,6,0,0,0,0
+449,3/24/21,Kouassi Ryan Sessegnon,Tottenham Hotspur,6,4,342,0,0,0,0
+450,3/25/21,Michel Vorm,Tottenham Hotspur,0,0,0,0,0,0,0
+451,3/26/21,Anthony Gordon,Everton,11,4,440,0,1,4,1
+452,3/27/21,Ørjan Håskjold Nyland,Aston Villa,7,5,537,0,0,0,0
+453,3/28/21,Scott Carson,Manchester City,0,0,0,0,0,0,0
+454,3/29/21,Shkodran Mustafi,Arsenal,15,13,1205,0,1,9,4
+455,3/30/21,Ayotomiwa Dele-Bashiru,Watford,0,0,0,0,0,0,0
+456,3/31/21,Michael Verrips,Sheffield United,0,0,0,0,0,0,0
+457,4/1/21,Lee Grant,Manchester United,0,0,0,0,0,0,0
+458,4/2/21,Gavin Kilkenny,Bournemouth,0,0,0,0,0,0,0
+459,4/3/21,Christian Saydee,Bournemouth,0,0,0,0,0,0,0
+460,4/4/21,Luke Cundle,Wolverhampton Wanderers,0,0,0,0,0,0,0
+461,4/5/21,Owen Otasowie,Wolverhampton Wanderers,0,0,0,0,0,0,0
+462,4/6/21,Nathan Holland,West Ham United,2,0,31,0,0,1,1
+463,4/7/21,Anthony Driscoll-Glennon,Burnley,0,0,0,0,0,0,0
+464,4/8/21,Mace Goodridge,Burnley,0,0,0,0,0,0,0
+465,4/9/21,Neco Williams,Liverpool,6,3,230,0,0,2,1
+466,4/10/21,Tyrick Mitchell,Crystal Palace,4,2,193,0,0,0,0
+467,4/11/21,Sam Woods,Crystal Palace,0,0,0,0,0,0,0
+468,4/12/21,Brandon Pierrick,Crystal Palace,2,0,13,0,0,0,0
+469,4/13/21,Japhet Tanganga,Tottenham Hotspur,6,6,526,0,0,2,1
+470,4/14/21,Joseph Anang,West Ham United,0,0,0,0,0,0,0
+471,4/15/21,William Smallbone,Southampton,9,4,393,0,2,4,0
+472,4/16/21,Tariq Lamptey,Brighton and Hove Albion,9,7,620,0,1,1,0
+473,4/17/21,Tyreece John-Jules,Arsenal,0,0,0,0,0,0,0
+474,4/18/21,Oskar Buur,Wolverhampton Wanderers,0,0,0,0,0,0,0
+475,4/19/21,Nya Kirby,Crystal Palace,0,0,0,0,0,0,0
+476,4/20/21,Nathaniel Phillips,Liverpool,0,0,0,0,0,0,0
+477,4/21/21,Bernardo Costa Da Rosa,West Ham United,0,0,0,0,0,0,0
+478,4/22/21,Gonçalo Bento Soares Cardoso,West Ham United,0,0,0,0,0,0,0
+479,4/23/21,Jake Eastwood,Sheffield United,0,0,0,0,0,0,0
+480,4/24/21,Thomas Allan,Newcastle United,0,0,0,0,0,0,0
+481,4/25/21,Kelland Watts,Newcastle United,1,0,16,0,0,0,0
+482,4/26/21,Abd-Al-Ali Morakinyo Olaposi Koiki,Burnley,0,0,0,0,0,0,0
+483,4/27/21,Takumi Minamino,Liverpool,10,2,242,0,0,5,2
+484,4/28/21,Sam Surridge,Bournemouth,4,0,25,0,0,2,0
+485,4/29/21,Mark Travers,Bournemouth,1,1,90,0,0,0,0
+486,4/30/21,Lovre Kalinić,Aston Villa,0,0,0,0,0,0,0
+487,5/1/21,Indiana Vassilev,Aston Villa,4,0,47,0,0,1,0
+488,5/2/21,Ignacio Pussetto,Watford,7,0,67,0,0,0,0
+489,5/3/21,Gedson Carvalho Fernandes,Tottenham Hotspur,7,0,62,0,0,0,0
+490,5/4/21,Darren Randolph,West Ham United,2,2,180,0,0,0,0
+491,5/5/21,José Reina,Aston Villa,12,12,1080,0,0,0,0
+492,5/6/21,Bruno André Cavaco Jordão,Wolverhampton Wanderers,1,0,6,0,0,0,0
+493,5/7/21,Lukas Rupp,Norwich City,12,8,699,0,0,3,2
+494,5/8/21,Giovanni McGregor,Crystal Palace,0,0,0,0,0,0,0
+495,5/9/21,Eric Bailly,Manchester United,4,1,148,0,0,0,0
+496,5/10/21,João Pedro Junqueira de Jesus,Watford,3,0,22,0,0,1,0
+497,5/11/21,Nabil Bentaleb,Newcastle United,12,8,749,0,0,2,0
+498,5/12/21,Jack Robinson,Sheffield United,6,6,505,0,0,0,0
+499,5/13/21,Josh Brownhill,Burnley,10,9,806,0,0,4,0
+500,5/14/21,Odion Ighalo,Manchester United,11,0,92,0,0,6,4
+501,5/15/21,Ruben Loftus-Cheek,Chelsea,7,2,205,0,1,4,0
+502,5/16/21,Matty James,Leicester City,1,0,5,0,0,0,0
+503,5/17/21,Ki-Jana Hoever,Liverpool,0,0,0,0,0,0,0
+504,5/18/21,João Manuel Neves Virgínia,Everton,0,0,0,0,0,0,0
+505,5/19/21,Pablo Marí,Arsenal,2,2,114,0,0,0,0
+506,5/20/21,Alexis Mac Allister,Brighton and Hove Albion,9,4,352,0,0,4,1
+507,5/21/21,Faustino Anjorin,Chelsea,1,0,19,0,0,1,0
+508,5/22/21,Armando Broja,Chelsea,1,0,4,0,0,0,0
+509,5/23/21,Jack Rodwell,Sheffield United,1,0,15,0,0,0,0
+510,5/24/21,Nathan Tella,Southampton,1,0,2,0,0,1,1
+511,5/25/21,Josh Martin,Norwich City,5,0,32,0,0,1,1
+512,5/26/21,Harvey White,Tottenham Hotspur,0,0,0,0,0,0,0
+513,5/27/21,Zech Medley,Arsenal,0,0,0,0,0,0,0
+514,5/28/21,Alexandre Nascimento Costa Silva,West Ham United,0,0,0,0,0,0,0
+515,5/29/21,Ben Johnson,West Ham United,3,3,270,0,0,1,0
+516,5/30/21,Nikola Tavares,Crystal Palace,0,0,0,0,0,0,0
+517,5/31/21,Richairo Zivkovic,Sheffield United,5,0,107,0,0,0,0
+518,6/1/21,Jarrad Branthwaite,Everton,4,2,299,0,0,0,0
+519,6/2/21,Jimmy Dunne,Burnley,0,0,0,0,0,0,0
+520,6/3/21,Lukas Jensen,Burnley,0,0,0,0,0,0,0
+521,6/4/21,Bailey Peacock-Farrell,Burnley,0,0,0,0,0,0,0
+522,6/5/21,Bobby Thomas,Burnley,0,0,0,0,0,0,0
+523,6/6/21,Max Thompson,Burnley,1,0,2,0,0,0,0
+524,6/7/21,Jake Vokins,Southampton,1,1,90,0,0,1,0
+525,6/8/21,Matt Macey,Arsenal,0,0,0,0,0,0,0
+526,6/9/21,Matthew Smith,Arsenal,0,0,0,0,0,0,0
+527,6/10/21,Tommy Doyle,Manchester City,1,0,15,0,0,1,1
+528,6/11/21,Taylor Harwood-Bellis,Manchester City,0,0,0,0,0,0,0
+529,6/12/21,Cole Palmer,Manchester City,0,0,0,0,0,0,0
+530,6/13/21,Adalberto Peñaranda,Watford,0,0,0,0,0,0,0
+531,6/14/21,Alexandre Jankewitz,Southampton,0,0,0,0,0,0,0
+532,6/15/21,Jordan Thomas,Norwich City,1,0,1,0,0,0,0
+533,6/16/21,Alfie Lewis,West Ham United,0,0,0,0,0,0,0
+534,6/17/21,Leonardo Campana,Wolverhampton Wanderers,0,0,0,0,0,0,0
+535,6/18/21,Josh Benson,Burnley,0,0,0,0,0,0,0
+536,6/19/21,Dennis Cirkin,Tottenham Hotspur,0,0,0,0,0,0,0
+537,6/20/21,Darnell Johnson,Leicester City,0,0,0,0,0,0,0
+538,6/21/21,Timothy Fosu-Mensah,Manchester United,3,2,136,0,0,1,0
+539,6/22/21,Conor Coventry,West Ham United,0,0,0,0,0,0,0
+540,6/23/21,Alex Cochrane,Brighton and Hove Albion,0,0,0,0,0,0,0

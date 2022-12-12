@@ -1,0 +1,90 @@
+---
+title: "mlb"
+author: "Miguel Betances"
+date: "2022-12-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+Load Dataset:
+
+```{r cars}
+library(tidyverse)
+library(dplyr)
+library(Lahman)
+dfB <- Batting
+dfS <- Salaries
+dfB <- dfB %>% filter(yearID>='1985')
+```
+
+
+```{r}
+data <- merge(dfB, dfS)
+```
+
+
+Average  Statistics:
+
+
+Print out Dataset Statistics:
+
+Average yearly salaries:
+```{r}
+data <- data %>% group_by(yearID) %>%
+  mutate(average_salary = mean(salary))
+```
+
+```{r}
+data$average_salary
+```
+
+Plot of Average yearly salary:
+```{r}
+data %>% ggplot()+ 
+  geom_point(mapping=aes(x=yearID, y=average_salary))
+```
+
+Average Homeruns & On Base percentage Per Year:
+```{r}
+data %>% group_by(yearID) %>% 
+  mutate(avg_obps = (mean(BB) + mean(H) + mean(HR) + mean(X2B) + mean(X3B))/(mean(AB) + mean(BB)))
+```
+```{r}
+data <- data %>% group_by(yearID) %>% 
+  mutate(avg_obps = (mean(BB) + mean(H) + mean(HR) + mean(X2B) + mean(X3B))/(mean(AB) + mean(BB)))
+```
+
+```{r}
+data %>% ggplot()+ 
+  geom_point(mapping=aes(x=yearID, y=avg_obps))
+```
+```{r}
+data$obps_level = case_when(data$avg_obps <= 0.3981 ~ 'Low', data$avg_obps >= 0.4162 ~ 'High', TRUE ~ 'Median')
+```
+
+On base percentage per year:
+```{r}
+data %>% ggplot()+ 
+  geom_point(mapping=aes(x=yearID, y=average_salary, color=obps_level))
+```
+Home runs per year:
+```{r}
+data <- data %>% group_by(yearID) %>% 
+  summarise(total_hr = sum(HR))
+```
+
+
+```{r}
+data %>% ggplot()+ 
+  geom_point(mapping=aes(x=yearID, y=total_hr))
+```
+
