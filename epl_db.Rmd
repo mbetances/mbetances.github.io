@@ -1,0 +1,198 @@
+
+---
+title: "English Premier League"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    logo: logo.png
+    source_code: embed
+    social: menu
+
+runtime: shiny
+---
+
+```{r global, include=FALSE}
+# load data in 'global' chunk so it can be shared by all users of the dashboard
+library(flexdashboard)
+library(tidyverse)
+library(plotly)
+library(knitr)
+library(DT)
+library(lubridate)
+df <- read_csv('epl.csv')
+position <- unique(df$Position)
+df$playstyle = case_when(df$xA >= median(df$Assists) ~ 'Playmaker', df$xG >= median(df$Goals) ~ 'Goalscorer')
+```
+
+{.sidebar}
+=======================================================================
+
+The English Premier League is one of the World's Most Prestigious sports tournaments. This dataset shows last season's individual statistics for almost all of its players. The dataset has variables such as: Age, Matches, Position, minutes played, goals, assists, passes, and pass completion %, and mnay others like expected goals or assists which may help the analyst learn more about the playstyle of such individual.
+
+
+```{r}
+sliderInput(inputId = "matches_input",
+            label = h2("Select Matches Played Range"),
+            min = min(df$Matches, na.rm=TRUE),
+            max = max(df$Matches, na.rm=TRUE),
+            value= c(1, 38))
+
+selectInput(inputId = "position_input", 
+            label = h3("Select Position"),
+            choices = Position, 
+            selected = 'FW')
+
+checkboxGroupInput(inputId = "playstyle_input", 
+                   label = h3("Playstyle"),
+                   choices = unique(df$playstyle), 
+                   inline = TRUE,
+                   selected = 'Playmaker')
+
+radioButtons(inputId = "position_input2", 
+             label = h2("Select Position"),
+             choices = c('GK', 'DF', 'MF', 'FW'),
+             inline = TRUE,
+             selected = 'DF')
+
+dateRangeInput(inputId = "date_input", 
+               label = h2("Date range"), 
+               start = min(df$Date), 
+               end = max(df$Date),
+               min = min(df$Date), 
+               max = max(df$Date))
+```
+
+
+Main Tab 1
+=======================================================================
+
+Column {data-width=500, .tabset}
+-----------------------------------------------------------------------
+
+### Column Tab 1
+
+```{r}
+df
+```
+
+
+### Column Tab 2
+
+```{r}
+kable(df)
+```
+=======================================================================
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+
+
+Main Tab 2
+=======================================================================
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Density Plot
+
+```{r}
+renderPlotly({
+  p1 <- df %>% 
+    filter(Matches > input$matches_input[1], Matches<input$matches_input[2]) %>% 
+    ggplot(aes(x=assists, color=playstyle))+
+    geom_density()
+  ggplotly(p1)
+})
+```
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Bar Plot
+
+```{r}
+renderPlotly({
+  p2 <- df %>% 
+    filter(Matches > input$matches_input[1], Matches < input$matches_input[2]) %>% 
+    ggplot(aes(x=assists, fill=position))+
+    geom_bar()
+  ggplotly(p2)
+})
+```
+
+
+Main Tab 3
+=======================================================================
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Density Plot
+
+```{r}
+renderPlotly({
+  p3 <- df %>% 
+    filter(Position==input$position_input) %>% 
+    ggplot(aes(x=xA, color=playstyle))+
+    geom_density()
+  ggplotly(p3)
+})
+```
+
+
+Column {data-width=1000}
+-----------------------------------------------------------------------
+
+
+### Density Plot
+
+```{r}
+renderPlotly({
+  p6 <- df %>% 
+    filter(Position==input$position_input) %>% 
+    ggplot(aes(x=xG, color=playstyle))+
+    geom_density()
+  ggplotly(p6)
+})
+```
+
+
+Main Tab 4
+=======================================================================
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Facet Wrap
+
+```{r}
+renderPlotly({
+  p4 <- df %>% 
+    filter(playstyle %in% input$playstyle_input) %>% 
+    ggplot()+geom_point((mapping=aes(x=, y=assists, color=playstyle)))+
+    facet_wrap(~playstyle)
+  ggplotly(p4)
+})
+```
+
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Bar Plot
+
+```{r}
+renderPlotly({
+  p5 <- df %>% 
+    filter(position %in% input$input_position) %>% 
+    ggplot(aes(x=Matches, fill=position))+
+    geom_bar()
+  ggplotly(p5)
+})
+```
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
