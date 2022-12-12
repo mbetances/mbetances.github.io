@@ -1,0 +1,13 @@
+name: flex_premierleague
+title: flex_premierleague
+username:
+account: miguelb
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7872515
+bundleId: 6627520
+url: https://miguelb.shinyapps.io/flex_premierleague/
+when: 1670858772.02993
+lastSyncTime: 1670858772.02994
+asMultiple: FALSE
+asStatic: FALSE
