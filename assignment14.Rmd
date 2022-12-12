@@ -1,0 +1,258 @@
+
+---
+output: 
+  html_document:
+  pdf_document: default
+  word_document: default
+title: "Assignment 14: Twitters Mining with rtweet"
+---
+
+***How to do it?***: 
+
+- Open the Rmarkdown file of this assignment ([link](assignment14.Rmd)) in Rstudio. 
+
+- Right under each **question**, insert  a code chunk (you can use the hotkey `Ctrl + Alt + I` to add a code chunk) and code the solution for the question. 
+
+- `Knit` the rmarkdown file (hotkey: `Ctrl + Alt + K`) to export an html.  
+
+-  Publish the html file to your Githiub Page. 
+
+***Submission***: Submit the link on Github of the assignment to Canvas
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE)
+```
+
+
+[Sample Codes](https://bryantstats.github.io/math421/slides/16_text_mining_rtweet.html)
+
+-------
+
+1. Pick a keyword or hashtag. Download the data associated with the keyword/hashtag. Plot at least 5 plots to visualize the data associated with the keyword/hashtag. All plots should have titles and captions. 
+
+```{r}
+library(rtweet) 
+library(tidytext)
+library(ggpubr) 
+library(tidyverse) 
+library(knitr)
+library(lubridate)
+```
+
+
+```{r, eval=FALSE}
+keyword_search = '#worldcup'
+
+df <- search_tweets(q = keyword_search, 
+                        n = Inf, # number of tweets
+                        include_rts = FALSE,
+                        `-filter` = "replies",
+                        lang = "en") %>% 
+  mutate(created_at = ymd_hms(format(created_at, tz = "US/Eastern")))
+
+write_csv(df, 'twitter_data.csv')
+```
+
+```{r}
+df <- read_csv('twitter_data.csv')
+```
+
+Plot 1
+
+```{r}
+ts_plot(df, "hours") +
+  labs(x = NULL, y = NULL,
+       title = "Frequency of tweets by time",
+       subtitle = paste0(format(min(df$created_at), "%d %B %Y"), " to ", format(max(df$created_at),"%d %B %Y")),
+       caption = "Data collected from Twitter's REST API via rtweet") +
+  theme_minimal()
+```
+This plot shows the tweets by amount with the #worldcup in recent days. As you can see, the tweets have been increasing and on november 17 they absolutely peaked with some news relating Superstar Cristiano Ronaldo and his availability and desire for what will be his last World Cup.
+
+#Mentions
+
+```{r}
+df %>% 
+  unnest_tokens(mentions, text, "tweets", to_lower = FALSE) %>%
+  filter(str_detect(mentions, "^@")) %>%  
+  count(mentions, sort = TRUE) %>%
+  head(10)
+```
+
+Plot 2
+
+```{r}
+df %>% 
+  unnest_tokens(mentions, text, "tweets", to_lower = FALSE) %>%
+  filter(str_detect(mentions, "^@")) %>%  
+  count(mentions, sort = TRUE) %>%
+  head(10) %>% 
+  ggplot(aes(x = n, y = reorder(mentions, n)))+
+  geom_col()+
+  labs(x = 'Top 10 mentions in the tweets', y = '', title = "Top Mentions in Tweets")
+```
+
+Plot 3
+
+```{r}
+df %>% 
+  filter(created_at>='2022-11-14') %>% 
+  unnest_tokens(output = hashtag, input = text, token = "tweets") %>%
+  filter(!hashtag %in% c("#messi",'#ronaldo','#france','#argentina', '#brazil',"#neymarjr"), str_detect(hashtag, "^#")) %>% 
+  count(hashtag, sort = TRUE) %>%
+  head(5) %>% 
+  ggplot(aes(x = n, y = reorder(hashtag, n)))+
+  geom_col()+
+  labs(x = 'Frequency', y = '', title = "Frequency of Related Hashtags")
+```
+
+```{r}
+library(RColorBrewer)
+
+pal <- brewer.pal(8,"Dark2")
+library(wordcloud) 
+
+df %>% 
+  filter(created_at>='2022-11-14') %>% 
+  unnest_tokens(output = hashtag, input = text, token = "tweets") %>%
+  filter(!hashtag %in% c("#messi",'#ronaldo','#france','#argentina', '#brazil',"#neymarjr"), str_detect(hashtag, "^#")) %>% 
+  count(hashtag, sort = TRUE) %>%
+  mutate(hashtag = str_remove(hashtag, '#')) %>% 
+  filter(hashtag != 'mufc') %>% 
+  with(wordcloud(hashtag, n, random.order = FALSE, max.words = 50, colors = pal))
+```
+Plot 4
+
+```{r}
+df %>%
+    unnest_tokens(input = text, output = word) %>% 
+    anti_join(get_stopwords()) %>% 
+    count(word, sort = TRUE) %>%
+    inner_join(get_sentiments("nrc")) %>%
+    filter(!is.na(sentiment)) %>%
+    count(sentiment, sort = TRUE) %>% 
+    mutate(n = n/sum(n)) %>% 
+    ggplot(aes(y= reorder(sentiment, n), x = n))+geom_col()+
+    labs(y='Relative Frequency', x ='',  title = "Sentiment in Tweets")
+```
+
+Plot 5
+
+```{r}
+df %>%
+    unnest_tokens(input = text, output = word) %>% 
+    anti_join(get_stopwords()) %>% 
+    count(word, sort = TRUE) %>%
+    inner_join(get_sentiments("bing")) %>%
+    filter(!is.na(sentiment)) %>%
+    count(sentiment, sort = TRUE) %>% 
+    mutate(n = n/sum(n)) %>% 
+    ggplot(aes(y= reorder(sentiment, n), x = n))+geom_col()+
+    labs(y='Relative Frequency', x ='',  title = "Sentiment Relative Frequency")
+```
+
+
+2. Choose a location then pick a trending keyword/hashtag in the location. Download the data associated with the keyword/hashtag. Plot at least 5 plots to visualize the data associated with the keyword/hashtag. All plots should have titles and captions. 
+
+```{r}
+# Show available locations to get trends
+trends_available()
+```
+```{r}
+get_trends('Birmingham')
+```
+```{r}
+keyword_search = '#BRASUI'
+
+df2 <- search_tweets(q = keyword_search, 
+                        n = Inf, # number of tweets
+                        include_rts = FALSE,
+                        `-filter` = "replies",
+                        lang = "en") %>% 
+  mutate(created_at = ymd_hms(format(created_at, tz = "US/Eastern")))
+
+write_csv(df2, 'twitter_data2.csv')
+```
+
+```{r}
+df2 <- read_csv('twitter_data2.csv')
+```
+
+Plot 1
+```{r}
+ts_plot(df2, "hours") +
+  labs(x = NULL, y = NULL,
+       title = "Frequency of tweets by time for #BRASUI",
+       subtitle = paste0(format(min(df2$created_at), "%d %B %Y"), " to ", format(max(df2$created_at),"%d %B %Y")),
+       caption = "Data collected from Twitter's REST API via rtweet") +
+  theme_minimal()
+```
+
+Plot 2
+```{r}
+df2 %>% 
+  unnest_tokens(mentions, text, "tweets", to_lower = FALSE) %>%
+  filter(str_detect(mentions, "^@")) %>%  
+  count(mentions, sort = TRUE) %>%
+  head(10) %>% 
+  ggplot(aes(x = n, y = reorder(mentions, n)))+
+  geom_col()+
+  labs(x = 'Top 10 mentions in the tweets', y = '', title = 'Top 10 mentions in #BRASUI')
+```
+
+Plot 3
+```{r}
+df2 %>% 
+  filter(created_at>='2022-11-14') %>% 
+  unnest_tokens(output = hashtag, input = text, token = "tweets") %>%
+  filter(!hashtag %in% c("#worldcup",'#brazi,','#neymar','#vini', '#xhaka'), str_detect(hashtag, "^#")) %>% 
+  count(hashtag, sort = TRUE) %>%
+  head(5) %>% 
+  ggplot(aes(x = n, y = reorder(hashtag, n)))+
+  geom_col()+
+  labs(x = 'Frequency', y = '', title = 'Top Hashtags')
+```
+
+```{r}
+library(RColorBrewer)
+
+pal <- brewer.pal(8,"Dark2")
+library(wordcloud) 
+
+df2 %>% 
+  filter(created_at>='2022-11-14') %>% 
+  unnest_tokens(output = hashtag, input = text, token = "tweets") %>%
+  filter(!hashtag %in% c("#worldcup",'#brazi,','#neymar','#vini', '#xhaka'), str_detect(hashtag, "^#")) %>% 
+  count(hashtag, sort = TRUE) %>%
+  mutate(hashtag = str_remove(hashtag, '#')) %>% 
+  filter(hashtag != 'mufc') %>% 
+  with(wordcloud(hashtag, n, random.order = FALSE, max.words = 50, colors = pal))
+```
+
+Plot 4
+```{r}
+df2 %>%
+    unnest_tokens(input = text, output = word) %>% 
+    anti_join(get_stopwords()) %>% 
+    count(word, sort = TRUE) %>%
+    inner_join(get_sentiments("nrc")) %>%
+    filter(!is.na(sentiment)) %>%
+    count(sentiment, sort = TRUE) %>% 
+    mutate(n = n/sum(n)) %>% 
+    ggplot(aes(y= reorder(sentiment, n), x = n))+geom_col()+
+    labs(y='Relative Frequency', x ='', title = 'Sentiment')
+```
+Plot 5
+```{r}
+df2 %>%
+    unnest_tokens(input = text, output = word) %>% 
+    anti_join(get_stopwords()) %>% 
+    count(word, sort = TRUE) %>%
+    inner_join(get_sentiments("bing")) %>%
+    filter(!is.na(sentiment)) %>%
+    count(sentiment, sort = TRUE) %>% 
+    mutate(n = n/sum(n)) %>% 
+    ggplot(aes(y= reorder(sentiment, n), x = n))+geom_col()+
+    labs(y='Relative Frequency', x ='', title = 'Overall Sentiment')
+```
+
